@@ -172,7 +172,23 @@ ORDER BY region NULLS FIRST, category NULLS FIRST;
  West    | Office Supplies |        1897 |   52609.8490
  West    | Technology      |         599 |   44303.6496
 ```
-
-
+What are the most popular product segments by state?
+```sql
+select 
+	state, 
+	segment, 
+	RANK() OVER (PARTITION BY state ORDER BY COUNT(quantity)) as popularity 
+FROM sales GROUP BY state, segment;
+```
+```
+        state         |   segment   | popularity 
+----------------------+-------------+------------
+ Alabama              | Home Office |          1
+ Alabama              | Consumer    |          2
+ Alabama              | Corporate   |          3
+ Arizona              | Home Office |          1
+ Arizona              | Corporate   |          2
+ Arizona              | Consumer    |          3
+```
 ## Process 
 -- Make a separate document about process
