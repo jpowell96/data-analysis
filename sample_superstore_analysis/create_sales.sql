@@ -1,0 +1,15 @@
+CREATE TABLE IF NOT EXISTS sales (
+id bigserial,
+ship_mode TEXT,
+segment TEXT,
+country TEXT,
+city TEXT,
+state TEXT,
+postal_code TEXT, 
+region TEXT,
+category TEXT,
+sub_category TEXT,
+sales BIGINT,
+quantity BIGINT,
+discount FLOAT,
+profit NUMERIC);

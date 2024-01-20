@@ -1,0 +1,108 @@
+Notes:
+Create a database
+https://www.kaggle.com/datasets/bravehart101/sample-supermarket-dataset
+
+
+psql
+CREATE DATABASE sales_db;
+\l  --list all the databases
+psql -d sales_db
+
+
+-- Create the table, then copy data into it
+-- create_sales.sql
+CREATE TABLE sales (
+id bigserial,
+ship_mode TEXT,
+segment TEXT,
+country TEXT,
+city TEXT,
+state TEXT,
+postal_code TEXT, 
+region TEXT,
+category TEXT,
+sub_category TEXT,
+sales BIGINT,
+quantity BIGINT,
+discount FLOAT,
+profit NUMERIC);
+
+psql -d sales_db -f create_sales_table.sql
+
+Check out the data types for the table by looking at info_schema.columns:
+sales_db=# SELECT column_name , data_type , is_nullable
+FROM information_schema.columns
+WHERE table_catalog = 'sales_db'
+AND table_name = 'sales';
+
+
+Tried to copy the data over, but my sales column was a bigint instead of a numeric type.
+
+ALTER TABLE sales ALTER COLUMN sales TYPE NUMERIC;
+
+Check out the data types for the table by looking at info_schema.columns:
+sales_db=# SELECT column_name , data_type , is_nullable
+FROM information_schema.columns
+WHERE table_catalog = 'sales_db'
+AND table_name = 'sales';
+
+Checked again and now I have the correct data type. 
+
+COPY sales(ship_mode,
+segment,
+country,
+city,
+state,
+postal_code, 
+region,
+category,
+sub_category,
+sales,
+quantity,
+discount,
+profit)
+FROM '/Users/jjpowell/projects/data-analysis/SampleSuperstore.csv' (DELIMITER ',', FORMAT csv, HEADER false);
+
+-- Questions to Answer from Sales Data:
+
+-- Give me the highest profit city for each state in the dataset
+WITH ranked_profits_by_state_city AS (
+	select state, city, sum(profit), 
+	RANK() OVER (PARTITION BY state ORDER BY sum(profit) DESC) as rank  
+	FROM sales GROUP BY state, city ORDER BY state, rank)
+
+SELECT state, city, sum FROM 
+ranked_profits_by_state_city
+WHERE rank = 1;
+
+-- Across all sales, how are sales split across segments
+select segment, COUNT(*) AS sales_by_segment, ROUND(COUNT(*) :: NUMERIC / (SELECT COUNT(*) FROM sales), 2) * 100 || '%'  AS pct_of_sales  
+FROM sales GROUP BY segment;
+
+-- For each category and subcategory show me how many sales are for the category
+SELECT category, 
+sub_category, 
+COUNT(*) as sales_count
+FROM sales GROUP BY GROUPING SETS ((category), (category, sub_category)) 
+ORDER BY category ASC, sub_category ASC NULLS FIRST;
+
+
+-- For each region, top 3 categories for each region by sales
+SELECT region, 
+category, 
+SUM(sales) as total_sales, 
+RANK() OVER (PARTITION BY region ORDER BY SUM(sales) DESC) as rank
+FROM sales 
+GROUP BY region, category;
+
+-- Give me the profits and losses by category
+select category, 
+SUM(CASE WHEN profit > 0 THEN profit ELSE 0 END) as profits, 
+ABS(SUM(CASE WHEN profit < 0 THEN profit ELSE 0 END)) as losses, 
+SUM(profit) as total  
+FROM sales GROUP BY category;
+
+-- Ship Mode By Region
+SELECT region, ship_mode, COUNT(ship_mode) as sales
+FROM sales GROUP BY GROUPING SETS ((region), (region, ship_mode)) 
+ORDER BY region ASC, sales DESC NULLS FIRST;
