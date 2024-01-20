@@ -179,27 +179,29 @@ What were sales, and profits by segment, cateory, and subcategory
         segment, 
         category, 
         sub_category, 
-        SUM(profit) AS total_profit,
+        ROUND(SUM(profit), 2) AS total_profit,
         SUM(quantity) AS units_sold, 
-        SUM(profit) / SUM(quantity) :: NUMERIC  AS profit_per_unit 
+        ROUND(SUM(profit) / SUM(quantity) :: NUMERIC, 2)  AS profit_per_unit 
 FROM sales 
 GROUP BY segment, category, sub_category 
 ORDER BY segment, profit_per_unit  DESC;
 ```
 
 ```
-   segment   |    category     | sub_category | total_profit | units_sold |    profit_per_unit     
--------------+-----------------+--------------+--------------+------------+------------------------
- Consumer    | Technology      | Copiers      |   24083.7106 |        117 |   205.8436803418803419
- Consumer    | Technology      | Phones       |   23837.1147 |       1685 |    14.1466556083086053
- Consumer    | Technology      | Accessories  |   20735.9225 |       1578 |    13.1406352978453739
- Consumer    | Furniture       | Chairs       |   13235.3319 |       1234 |    10.7255525931928687
- Consumer    | Technology      | Machines     |    2141.0618 |        217 |     9.8666442396313364
- Consumer    | Office Supplies | Appliances   |    6981.9282 |        908 |     7.6893482378854626
- Consumer    | Office Supplies | Envelopes    |    3264.4126 |        442 |     7.3855488687782805
- Consumer    | Office Supplies | Paper        |   15534.6436 |       2602 |     5.9702704073789393
- Consumer    | Office Supplies | Binders      |   17995.5972 |       3015 |     5.9686889552238806
-
+   segment   |    category     | sub_category | total_profit | units_sold | profit_per_unit 
+-------------+-----------------+--------------+--------------+------------+-----------------
+ Consumer    | Technology      | Copiers      |     24083.71 |        117 |          205.84
+ Consumer    | Technology      | Phones       |     23837.11 |       1685 |           14.15
+ Consumer    | Technology      | Accessories  |     20735.92 |       1578 |           13.14
+ Consumer    | Furniture       | Chairs       |     13235.33 |       1234 |           10.73
+ Consumer    | Technology      | Machines     |      2141.06 |        217 |            9.87
+ Consumer    | Office Supplies | Appliances   |      6981.93 |        908 |            7.69
+ Consumer    | Office Supplies | Envelopes    |      3264.41 |        442 |            7.39
+ Consumer    | Office Supplies | Binders      |     17995.60 |       3015 |            5.97
+ Consumer    | Office Supplies | Paper        |     15534.64 |       2602 |            5.97
+ Consumer    | Office Supplies | Storage      |      7104.20 |       1619 |            4.39
+ Consumer    | Furniture       | Furnishings  |      7919.42 |       1834 |            4.32
+ Consumer    | Office Supplies | Labels       |      3075.99 |        715 |            4.30
 ```
 What are the most popular product segments by quantity sold?
 ```sql
