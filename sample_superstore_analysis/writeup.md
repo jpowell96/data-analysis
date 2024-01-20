@@ -172,9 +172,38 @@ ORDER BY region NULLS FIRST, category NULLS FIRST;
  West    | Office Supplies |        1897 |   52609.8490
  West    | Technology      |         599 |   44303.6496
 ```
-What are the most popular product segments by state?
+
+What were sales, and profits by segment, cateory, and subcategory
 ```sql
-select 
+ SELECT 
+        segment, 
+        category, 
+        sub_category, 
+        SUM(profit) AS total_profit,
+        SUM(quantity) AS units_sold, 
+        SUM(profit) / SUM(quantity) :: NUMERIC  AS profit_per_unit 
+FROM sales 
+GROUP BY segment, category, sub_category 
+ORDER BY segment, profit_per_unit  DESC;
+```
+
+```
+   segment   |    category     | sub_category | total_profit | units_sold |    profit_per_unit     
+-------------+-----------------+--------------+--------------+------------+------------------------
+ Consumer    | Technology      | Copiers      |   24083.7106 |        117 |   205.8436803418803419
+ Consumer    | Technology      | Phones       |   23837.1147 |       1685 |    14.1466556083086053
+ Consumer    | Technology      | Accessories  |   20735.9225 |       1578 |    13.1406352978453739
+ Consumer    | Furniture       | Chairs       |   13235.3319 |       1234 |    10.7255525931928687
+ Consumer    | Technology      | Machines     |    2141.0618 |        217 |     9.8666442396313364
+ Consumer    | Office Supplies | Appliances   |    6981.9282 |        908 |     7.6893482378854626
+ Consumer    | Office Supplies | Envelopes    |    3264.4126 |        442 |     7.3855488687782805
+ Consumer    | Office Supplies | Paper        |   15534.6436 |       2602 |     5.9702704073789393
+ Consumer    | Office Supplies | Binders      |   17995.5972 |       3015 |     5.9686889552238806
+
+```
+What are the most popular product segments by quantity sold?
+```sql
+SELECT 
 	state, 
 	segment, 
 	RANK() OVER (PARTITION BY state ORDER BY COUNT(quantity)) as popularity 
@@ -190,5 +219,58 @@ FROM sales GROUP BY state, segment;
  Arizona              | Corporate   |          2
  Arizona              | Consumer    |          3
 ```
-## Process 
--- Make a separate document about process
+## Preparing the Data
+
+1. Using the psql cli, I create the database
+```sql
+psql -- Launch Postgres CLI
+CREATE DATABASE sales_db;
+\c sales_db -- Connect to the newly created database
+```
+2. Create the database table for the data in the csv
+```sql
+CREATE TABLE sales (
+id bigserial,
+ship_mode TEXT,
+segment TEXT,
+country TEXT,
+city TEXT,
+state TEXT,
+postal_code TEXT, 
+region TEXT,
+category TEXT,
+sub_category TEXT,
+sales BIGINT,
+quantity BIGINT,
+discount FLOAT,
+profit NUMERIC);
+```
+
+3. Load the csv file intot the table
+
+Note: I removed the header row in the csv before copying it.
+```sql
+COPY sales(ship_mode,
+segment,
+country,
+city,
+state,
+postal_code, 
+region,
+category,
+sub_category,
+sales,
+quantity,
+discount,
+profit)
+FROM '/path/to/SampleSuperstore.csv' (DELIMITER ',', FORMAT csv, HEADER false);
+```
+
+This command failed because the sales column was a numeric type, not a bigint. I changed the column to a numeric type to allow the data to be imported.
+
+```sql
+ALTER TABLE sales ALTER COLUMN sales TYPE NUMERIC;
+```
+
+With the correct types I could now run the COPY command and populate the
+database table.
