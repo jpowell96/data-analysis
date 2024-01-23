@@ -28,8 +28,23 @@ It has 13 columns that include sales data for a generic superstore:
 Given this sales data, I asked a few questions to learn more.
 I used SQL to parse the CSV and load it into a table I created and I asked a few questions about the data.
 
-## Conclusions
-Given the information, what should your supermarket do?
+## Findings
+Here were some of my findings from querying the dataset.
+
+Overall profit of the dataset was  $286,397.02 dollars. California, New York, and Washington State contributed most to the overall 
+profits. 
+
+When organized by region the West had the most profit, followed by the East, South, and finally Central regions.
+
+Though capital cities tended to be the highest profit cities for states, some states had non-capital cities as their highest profit cities. For example, Lebanon, Tennessee was the highest profit city in the state.  
+
+Technology was the most profitable product category among the three categories (Tech, Furniture, Office Supplies) but the Office Supplies category sold the most sales (~6200 sales). 
+
+Though total technology sales were lower, Tech products had the highest profit per unit. Corporate Copiers had the highest profit per unit with ~ $271 dollars of profit per copier. By comparison, the highest profit per unit for Office Supplies was ~$14, for Appliances.
+
+Across most states (48), products in the Home Office segment had the most sales. Binders and Paper sold the most units of Home Office items with 1111 binders sold and 1021 units of Paper sold.
+
+
 
 
 
@@ -184,7 +199,7 @@ What were sales, and profits by segment, cateory, and subcategory
         ROUND(SUM(profit) / SUM(quantity) :: NUMERIC, 2)  AS profit_per_unit 
 FROM sales 
 GROUP BY segment, category, sub_category 
-ORDER BY segment, profit_per_unit  DESC;
+ORDER BY profit_per_unit  DESC;
 ```
 
 ```

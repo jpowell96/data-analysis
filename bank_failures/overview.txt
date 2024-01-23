@@ -1,0 +1,123 @@
+Notes:
+Data Taken From:
+https://catalog.data.gov/dataset/fdic-failed-bank-list
+
+https://medium.com/@jberry_33001/handling-missing-values-in-time-series-with-sql-a910b5f481fe 
+
+
+Main Page:
+https://fdic.gov/resources/resolutions/bank-failures/failed-bank-list/index.html
+- Some values have commas within them. COPY might take care
+of these by default, but not sure?
+- Will banks have duplicate names?
+denormalized:
+- banks
+id, name
+
+- city
+id, name
+- state
+id, name
+
+-- Create the table
+CREATE TABLE bank_failures (
+id bigserial,
+bank_name TEXT,
+city TEXT,
+state TEXT,
+cert TEXT,
+acquiring_institution TEXT,
+closing_date DATE,
+fund BIGINT
+);
+
+-- Copy data into the table
+COPY bank_failures (
+bank_name,
+city,
+state,
+cert,
+acquiring_institution,
+closing_date,
+fund
+) FROM '/Users/jjpowell/projects/data-analysis/bank_failures/banklist.csv' WITH (FORMAT csv, DELIMITER ',', QUOTE '"', ESCAPE '"', ENCODING 'ASCII);
+
+I had done some test inserts before realizing I had to specify FORMAT csv so I could correctly escape quote characters. I deleted old data from testing, but now I wanted to reset the sequence for my table. Postgres stores a sequence that keeps track of the current highest id for an autoincrement id. 
+
+To find the sequence I did:
+ select sequence_name  FROM information_schema.sequences;
+https://www.postgresql.org/docs/current/infoschema-sequences.html
+Which gave me me the name of the sequence for my table:
+ bank_failures_id_seq
+
+So I reset it with:
+ ALTER sequence  bank_failures_id_seq RESTART
+
+Now I imported my data for real but got this error: ERROR:  invalid byte sequence for encoding "UTF8": 0x96
+
+It turns out that the hyphen character for one of the banks was a special character. I replaced it with a - character and that allowed me to import all the data
+
+
+Normalizing the Data:
+I want to try normalizing the data. I want to extract the 
+banks, city, and state into their own tables.
+
+States: 
+SELECT DISTINCT state from bank_failures;
+ CREATE TABLE state_dimension (
+ 	id serial,
+ 	state TEXT NOT NULL
+ );
+INSERT INTO state_dimension(state) SELECT DISTINCT state FROM bank_failures;
+
+Cities:
+SELECT DISTINCT city from bank_failures;
+CREATE TABLE city_dimension (
+        id serial,
+        city TEXT NOT NULL UNIQUE
+ );
+ INSERT INTO city_dimension(city) SELECT DISTINCT city FROM bank_failures;
+
+cert column = FDIC Certificate The FDIC Certificate ID is a unique number assigned to each depository institution by the Federal Deposit Insurance Corporation (FDIC).
+
+-- Initially allow fdic_cert_num null until we can backfill the missing ones
+I haven't add FK constraints because I know I need to do a backfill for acquiring institutions
+but don't know if I'll have all of the data.
+
+ CREATE TABLE bank_dimension (
+ 	id bigserial,
+ 	name TEXT NOT NULL,
+ 	fdic_cert TEXT,
+ 	city_id INT,
+ 	state_id INT
+ );
+Now that we have city, and state populated, I want to make a query to get all the failed banks
+to populate the bank_dimension table.
+
+SELECT bank_name, cert, c.id, s.id 
+FROM bank_failures b  
+	INNER JOIN state_dimension s ON b.state = s.state 
+	INNER JOIN city_dimension c ON b.city = c.city;
+
+INSERT INTO bank_dimension 
+	SELECT bank_name, cert, c.id, s.id 
+	FROM bank_failures b  
+		INNER JOIN state_dimension s ON b.state = s.state 
+		INNER JOIN city_dimension c ON b.city = c.city;
+Note that this only populates the bank tables with banks that appear in the bank_name column.
+There are also banks in the acquiring institution column, so I want to find out which 
+banks in that column are.
+
+Query to introspect table: SELECT column_name  FROM information_schema.columns WHERE table_name = 'bank_failures';
+
+I want to see how many acquiring instituions are not in the bank_name column.
+1. SELECT COUNT(DISTINCT acquiring_institution) FROM bank_failures; -- Find how many distinct ones there are
+2. Find out how many there are excluding the bank names column:
+SELECT COUNT(DISTINCT acquiring_institution) FROM (SELECT acquiring_institution FROM bank_failures EXCEPT SELECT bank_name FROM bank_failures) AS subquery;
+
+3. Find all the acquiring institutions:
+SELECT DISTINCT acquiring_institution FROM bank_failures EXCEPT SELECT DISTINCT bank_name FROM  bank_failures;
+
+3a. export to csv
+TODO: See if I can query the fdic api to get data on the remaining institutions:
+https://banks.data.fdic.gov/docs/#/api_endpoints, or inspect network calls for https://banks.data.fdic.gov/bankfind-suite/

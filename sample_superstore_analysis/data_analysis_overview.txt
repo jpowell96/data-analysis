@@ -80,20 +80,30 @@ select segment, COUNT(*) AS sales_by_segment, ROUND(COUNT(*) :: NUMERIC / (SELEC
 FROM sales GROUP BY segment;
 
 -- For each category and subcategory show me how many sales are for the category
-SELECT category, 
-sub_category, 
-COUNT(*) as sales_count
-FROM sales GROUP BY GROUPING SETS ((category), (category, sub_category)) 
-ORDER BY category ASC, sub_category ASC NULLS FIRST;
+SELECT 
+region,
+category, 
+COUNT(*) as total_sales
+FROM sales GROUP BY ROLLUP(region, category, sub_category)
+ORDER BY region ASC, category ASC, sub_category ASC NULLS FIRST;
 
 
+SELECT 
+region,
+category, 
+COUNT(*) as total_sales,
+RANK() OVER (PARTITION BY region ORDER BY COUNT(*)) as rank
+FROM sales GROUP BY ROLLUP(region, category)
+ORDER BY region NULLS FIRST, category);
+
+-- How did sales look for each category by region
 -- For each region, top 3 categories for each region by sales
 SELECT region, 
 category, 
 SUM(sales) as total_sales, 
 RANK() OVER (PARTITION BY region ORDER BY SUM(sales) DESC) as rank
 FROM sales 
-GROUP BY region, category;
+GROUP BY ROLLUP(region, category);
 
 -- Give me the profits and losses by category
 select category, 
@@ -106,3 +116,24 @@ FROM sales GROUP BY category;
 SELECT region, ship_mode, COUNT(ship_mode) as sales
 FROM sales GROUP BY GROUPING SETS ((region), (region, ship_mode)) 
 ORDER BY region ASC, sales DESC NULLS FIRST;
+
+
+
+SELECT category, 
+sub_category, 
+COUNT(*) as total_sales,
+SUM(profit) as profit
+FROM sales 
+GROUP BY ROLLUP(category, sub_category)
+ORDER BY category ASC NULLS FIRST, sub_category ASC NULLS FIRST;
+
+select state, segment, RANK() OVER (PARTITION BY state ORDER BY COUNT(quantity)) as popularity FROM sales GROUP BY state, segment;
+
+ select 
+        segment, 
+        category, 
+        sub_category, 
+        SUM(profit) as total_profit,
+        SUM(quantity) as units_sold, 
+        SUM(profit) / SUM(quantity) :: NUMERIC  as profit_per_unit FROM sales GROUP BY segment, category, sub_category ORDER BY segment, profit_per_unit  DESC;
+
