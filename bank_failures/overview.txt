@@ -115,9 +115,139 @@ I want to see how many acquiring instituions are not in the bank_name column.
 2. Find out how many there are excluding the bank names column:
 SELECT COUNT(DISTINCT acquiring_institution) FROM (SELECT acquiring_institution FROM bank_failures EXCEPT SELECT bank_name FROM bank_failures) AS subquery;
 
-3. Find all the acquiring institutions:
+3. Find all the acquiring institutions that were not later acquired
 SELECT DISTINCT acquiring_institution FROM bank_failures EXCEPT SELECT DISTINCT bank_name FROM  bank_failures;
 
 3a. export to csv
 TODO: See if I can query the fdic api to get data on the remaining institutions:
-https://banks.data.fdic.gov/docs/#/api_endpoints, or inspect network calls for https://banks.data.fdic.gov/bankfind-suite/
+Found a CSV dump of all the institutions in the FDIC, so I dumped those from
+this link:
+https://banks.data.fdic.gov/docs/#/api_endpoints
+
+And I populated the bank_dimension table with those. 
+
+3b. Populate the banks table with the acquiring banks
+
+4. Do some time series analysis. Show failures by Year, Month
+What were the failures by year, month:
+ SELECT EXTRACT('YEAR' FROM closing_date) as acq_year, EXTRACT('MONTH' FROM closing_date) as acq_month, COUNT(*) as total_failures  FROM bank_failures GROUP BY acq_year, acq_month ORDER BY acq_year, acq_month;
+
+ You'll notice from this query that we don't have a month for every year.
+ To fix this, I made a month table with all the months Jan - Dec.
+
+ I did a cross join on all the years from bank table and made a timescale table I used to query data:
+ WITH all_years AS (SELECT DISTINCT EXTRACT(YEAR FROM closing_date) AS year FROM bank_failures),
+ all_months AS (SELECT DISTINCT EXTRACT(MONTH FROM closing_date) as month FROM bank_failures),
+ timescale AS (SELECT year, month FROM all_years CROSS JOIN all_months ORDER BY year, month ASC)
+
+ Using this CTE, I could find the total closings across month-to-month, or year-over-year like this:
+
+ SELECT year, month, COUNT(id) AS total_closings
+ FROM timescale t LEFT JOIN bank_failures b
+ ON t.year = EXTRACT(YEAR FROM b.closing_date)
+    AND t.month = EXTRACT(MONTH FROM b.closing_date)
+ WHERE t.year = 2000
+ GROUP BY year , month    
+ ORDER BY year ASC, month ASC;
+
+Notice that I used COUNT(id) rather than COUNT(*). Because we use a left join,
+columns that do not match the join condition have null values. To ensure I count banks that closed,
+I need to COUNT(id) which will filter out the rows that had null ids.
+
+I could add this CTE to the start of every query, but for efficiency, I wanted to make a materialized view of the time scale. A materialized view is a query that your database computes and saves the results for. That means that I can use the data from timescale without extra query costs from doing a CROSS JOIN every time. 
+
+To create the materialized I ran:
+CREATE MATERIALIZED VIEW IF NOT EXISTS timescale(year, month, month_name) AS (
+	WITH all_years AS (SELECT DISTINCT EXTRACT(YEAR FROM closing_date) AS year FROM bank_failures),
+ 	all_months AS (SELECT DISTINCT EXTRACT(MONTH FROM closing_date) as month, TO_CHAR(closing_date, 'Month') as month_name FROM bank_failures)
+ 	SELECT year, month, month_name FROM all_years CROSS JOIN all_months ORDER BY year ASC, month ASC
+)
+WITH DATA; 
+
+To double check the view, I query the information_schema for my database:
+select * FROM pg_matviews where matviewname = 'timescale';
+This displays the query for the materialized view.
+
+Now I'm going to do some time series analysis. First, to show the bank failures by year:
+
+SELECT year, COUNT(bank_name) as bank_failures 
+FROM bank_failures LEFT JOIN timescale 
+	ON EXTRACT('YEAR' from closing_date) = timescale.year
+GROUP BY year 
+ORDER BY year ASC;
+
+This initial query is wrong because this would create 12 rows for each entry in the bank_failures table. That's because the JOIN is just on the year column. We need to match the granularity of the 
+timescale table (year, month). To get an accurate number of failures per year:
+
+SELECT year, COUNT(id) as bank_failures 
+FROM bank_failures LEFT JOIN timescale 
+	ON EXTRACT('YEAR' from closing_date) = timescale.year 
+		AND EXTRACT('MONTH' from closing_date) = timescale.month
+GROUP BY year 
+ORDER BY year ASC;
+
+I validaetd that this matched the summary on the FDIC page: https://www.fdic.gov/bank/historical/bank/
+
+Now, we can do a few other queries. First I'll add columns for lag, lead, and running total:
+
+-- Current year with previous year stuff
+WITH closings_by_year AS (
+SELECT year, 
+	   COUNT(id) as closings
+FROM bank_failures LEFT JOIN timescale 
+	ON EXTRACT('YEAR' from closing_date) = timescale.year 
+		AND EXTRACT('MONTH' from closing_date) = timescale.month
+GROUP BY year 
+ORDER BY year ASC)
+SELECT year, closings, 
+LAG(closings) OVER (ORDER BY year ASC) as previous_year
+FROM closings_by_year;
+
+-- Current year with a running total
+WITH closings_by_year AS (
+SELECT year, 
+	   COUNT(id) as closings
+FROM bank_failures LEFT JOIN timescale 
+	ON EXTRACT('YEAR' from closing_date) = timescale.year 
+		AND EXTRACT('MONTH' from closing_date) = timescale.month
+GROUP BY year 
+ORDER BY year ASC)
+SELECT year, closings, 
+SUM(closings) OVER (ORDER BY year ASC ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) as running_total
+FROM closings_by_year;
+
+5. Show failures by year, previous_year, next year with lag() and lead()
+-- Current year with year over year change
+WITH closings_by_year AS (
+SELECT year, 
+	   COUNT(id) as closings
+FROM bank_failures LEFT JOIN timescale 
+	ON EXTRACT('YEAR' from closing_date) = timescale.year 
+		AND EXTRACT('MONTH' from closing_date) = timescale.month
+GROUP BY year 
+ORDER BY year ASC),
+
+change_by_year AS (SELECT year, 
+closings, 
+LAG(closings) OVER (ORDER BY year ASC) as previous_year,
+LEAD(closings) OVER (ORDER BY year ASC) as next_year
+FROM closings_by_year)
+
+SELECT year,
+	   closings,
+	   previous_year,
+	   ROUND(COALESCE(closings :: NUMERIC / NULLIF(previous_year, 0) :: NUMERIC, 0) * 100 , 2) AS YoYChange
+FROM change_by_year;
+
+6. Use a recursive query to look for chains of acquisitions
+ (test out by making a basic parent/child table and then apply this to the acquisitions table) Or make an ownership table
+
+I'm also curious about which banks are acquiring each other. Let's ask:
+SELECT acquiring_institution, COUNT(*) AS acquisitions 
+FROM bank_failures 
+GROUP BY acquiring_institution 
+ORDER BY acquisitions DESC;
+
+-- Group acquisitions:
+
+-- Do some parent child analysis on the table
