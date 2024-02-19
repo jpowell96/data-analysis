@@ -27,13 +27,13 @@ Though you'll typically query your tables like:
 SELECT * FROM my_table LIMIT 10;
 ```
 
-Postgres assumes that you're querying the "public" schema. You can also include the schema as part of your query like:
+You can also include the schema as part of your query like so:
 
 ```sql
 SELECT * FROM public.my_table LIMIT 10;
 ```
 
-The ~information schema~, as its name suggests, is a schema in your Postgres Database with tables that store data _about_ the data in your database. When you want to query this schema, be sure to include the schema name before the table you're trying to access.
+The _information schema_, as its name suggests, is a schema in your Postgres Database with tables that store data _about_ the data in your database. You can write queries against the tables in this schema to learn more about your database(s).
 
 You can find the full list of tables in the information schema [in the Postgres Docs](https://www.postgresql.org/docs/16/information-schema.html), but I'm sharing a few that are handy.
 
