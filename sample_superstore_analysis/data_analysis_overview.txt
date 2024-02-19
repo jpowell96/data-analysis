@@ -1,3 +1,8 @@
+Post Title:
+One of my goals this year is to improve my SQL skills. I purchased a subscription to Datacamp, an online learning platform focused on data skills. I've taken a few courses from basic SQL joins, to data analysis, to window functions. Now, I did a mini data analysis project to exercise my learnings.
+
+
+
 Notes:
 Create a database
 https://www.kaggle.com/datasets/bravehart101/sample-supermarket-dataset
