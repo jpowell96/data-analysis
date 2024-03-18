@@ -7,6 +7,9 @@ tags:
 # Use a ratio of 100:42 for best results.
 # published_at: 2024-01-24 01:25 +0000
 ---
+[TODO] Table of Contents
+[TODO] List of Sources
+
 ## Intro
 
 If you've worked with SQL before, you're familiar with writing queries to ask questions about the _data_ in your database. Give me all the people that user A follows. Tell me how many sales we made in the last week. 
@@ -53,7 +56,7 @@ where table_schema = 'public';
 ```
 
 ```sql
--- Information about the columns in the table
+-- Information about the columns in a table
 select 
   column_name,
   data_type, 
@@ -121,6 +124,25 @@ Output:
 
 ```
 
+Or, with some extra functions, you can calculate the size of your tables and indexes*:
+
+```sql
+SELECT relname, pg_relation_size(oid) as bytes, 
+          pg_size_pretty(pg_relation_size(oid)) 
+     FROM pg_class 
+    WHERE relnamespace = 'public'::regnamespace 
+    ORDER BY relname;
+```
+*Query from [Designing high-performance time series data tables on Amazon RDS for PostgreSQL](https://aws.amazon.com/blogs/database/designing-high-performance-time-series-data-tables-on-amazon-rds-for-postgresql/)
+
+```
+   relname    |  bytes  | pg_size_pretty 
+--------------+---------+----------------
+ sales        | 1638400 | 1600 kB
+ sales_id_seq |    8192 | 8192 bytes
+
+```
+
 ### Putting It All Together
 Queries can be really powerful when you join tables across these schemas.
 For example, you can list all of the constraints of a table. Here's a query
@@ -145,5 +167,10 @@ Output:
  parent     | id          | child_parent_id_fkey         | Foreign Key Constraint | FOREIGN KEY (parent_id) REFERENCES parent(id)
  parent     | parent_name | name_less_than_20_characters | Check Constraint       | CHECK (length(parent_name::text) <= 20)
 ```
+
+### Wrap Up
+
+ The Postgres Information Schema and Postgres Catalog are great tools to understand your database on a deeper level.
+
 Reference:
 [Docs for System Level Metadata](https://www.postgresql.org/docs/current/views.html)
