@@ -194,5 +194,6 @@ levels of granularity (day, week, month, etc.) to match the granularity of your 
 
 
 ### Helpful Links
-[generate_series() postgres docs](https://www.postgresql.org/docs/current/functions-srf.html)
-[timescale db - generate series explanation](https://www.timescale.com/blog/how-to-create-lots-of-sample-time-series-data-with-postgresql-generate_series/)
+1. [generate_series() postgres docs](https://www.postgresql.org/docs/current/functions-srf.html)
+
+2. [timescale db - generate series explanation](https://www.timescale.com/blog/how-to-create-lots-of-sample-time-series-data-with-postgresql-generate_series/)
