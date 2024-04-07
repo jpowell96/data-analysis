@@ -248,6 +248,44 @@ FROM bank_failures
 GROUP BY acquiring_institution 
 ORDER BY acquisitions DESC;
 
--- Group acquisitions:
+-- Updated the code to use generate_series rather than complex generation code:
+1. Find the min year so we know start + stop of the series
+select 
+MIN(extract('year' from closing_date)) as min_year,
+MAX(extract('year' from closing_date)) as max_year
+from bank_failures bf; 
 
--- Do some parent child analysis on the table
+
+-- Bank Failures by Year, Month
+with year_month AS(
+SELECT DATE_TRUNC('month', timescale) as year_month FROM 
+generate_series('2000-01-01', '2023-12-01','1 month'::interval) as
+timescale)
+select year_month, TO_CHAR(year_month, 'Month') as month_name, COUNT(bf.closing_date) as bank_failures
+from year_month left join bank_failures bf 
+on DATE_TRUNC('year', year_month) = DATE_TRUNC('year', bf.closing_date)
+group by year_month
+order by year_month asc;
+
+
+-- Bank Failures by Year, Month
+with years AS(
+SELECT DATE_TRUNC('year', timescale) as year FROM 
+generate_series('2000-01-01', '2023-12-01','1 year'::interval) as
+timescale)
+select extract( 'year' from years.year), COUNT(bf.closing_date) as bank_failures
+from years left join bank_failures bf 
+on years.year = DATE_TRUNC('year', bf.closing_date)
+group by year
+order by year asc;
+
+
+with months as (
+SELECT DATE_TRUNC('month', timescale) as year_month FROM 
+generate_series('2000-01-01', '2023-12-01','1 month'::interval) as
+timescale)
+select extract( 'year' from months.year_month), extract('month' from months.year_month), COUNT(bf.closing_date) as bank_failures
+from months left join bank_failures bf 
+on months.year_month = DATE_TRUNC('month', bf.closing_date) 
+group by year_month
+order by year_month asc;
