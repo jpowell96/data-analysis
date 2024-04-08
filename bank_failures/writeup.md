@@ -141,6 +141,73 @@ GROUP BY closing_year, closing_month
 ORDER BY closing_year, closing_month);
 ```
 
+Before we get into time series, here are a few queries I ran on the original data set:
+
+Which states had the most bank failures over the complete time period?
+
+```sql
+select state, COUNT(*) as bank_failures
+from bank_failures bf 
+group by state
+order by COUNT(*) desc
+limit 10;
+```
+
+|state|bank_failures|
+|-----|-------------|
+|GA|93|
+|FL|76|
+|IL|69|
+|CA|43|
+|MN|23|
+|WA|19|
+|MO|16|
+|AZ|16|
+|MI|14|
+|TX|13|
+
+
+Which states had the most closures in a given year, and for which year?
+
+```sql
+select state, extract('YEAR' from closing_date) :: TEXT as closing_year, COUNT(*) as state_failures_by_year
+from bank_failures bf 
+group by state, extract('YEAR' from closing_date) 
+order by COUNT(*) desc
+limit 10;
+```
+
+|state|closing_year|state_failures_by_year|
+|-----|------------|----------------------|
+|FL|2010|29|
+|GA|2009|25|
+|GA|2011|23|
+|IL|2009|21|
+|GA|2010|21|
+|CA|2009|17|
+|IL|2010|16|
+|FL|2009|14|
+|FL|2011|13|
+|CA|2010|12|
+
+For each year, which state(s) had the most bank failures? Include ties.
+
+```sql
+with ranked_state_failures_by_year as (
+	select 
+	 extract('YEAR' from closing_date) as closing_year,
+	 state,
+	 COUNT(*) as state_failures_by_year,
+	 -- Window functions are evaluated AFTER the group by clause, so this is comparing the bank failures per state
+	 dense_rank() over (partition by extract('YEAR' from closing_date) order by  COUNT(*) desc)
+	from bank_failures bf 
+	group by extract('YEAR' from closing_date), state
+	order by extract('YEAR' from closing_date), COUNT(*) desc)
+select closing_year, state, state_failures_by_year 
+from ranked_state_failures_by_year
+where dense_rank = 1
+order by closing_year;
+```
 
 Questions:
 
