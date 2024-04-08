@@ -312,12 +312,14 @@ from bank_failures_by_year;
 |2014|18|-25.00%|
 |2015|8|-55.56%|
 |2016|5|-37.50%
+
 ## Readout
 [TODO] Explain what you found from the queries
 
 Over the time period from 2000 to 2023, there were 568 banks that closed. Georiga, Florida, and Illinois had the most closers over the time period with 93, 76, and 69 closures respectively. On a year basis, Florida had the most closures in a single year with 29 banks closing in 2010.
 
-As expected, bank closures treneded upwards between 2008 - 2012, peaking with 157 closures in 2010. From 
+As expected, bank closures treneded upwards between 2008 - 2012, peaking with 157 closures in 2010. The year over year changes highlight this explosion of failures.
+From 2007 to 2008, the number of bank closures grew over 8x from 3 closures to 25 closures, and grew even more the following year - from 25 closures in 2008 to 140 in 2009 - a 460% increase. Closures in a single year peaked in 2010 with 157 closures with Florida having the most closures with 29 bank clousres. July 2009 was the worst month for closures, with 29 closings in a single month.
 
 
 ## Wrapping it up
