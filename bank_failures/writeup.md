@@ -283,8 +283,17 @@ For time series data that has gaps, the generate_series() function can enable
 analyzing the data with a complete timeline. And, if needed, can support different
 levels of granularity (day, week, month, etc.) to match the granularity of your date.
 
+## Improvemnts 
 
-### Helpful Links
+1. I made use of the EXTRACT function often in my queries. It may have made sense to organize the table such that year has it's own column, so I don't
+need to call EXTRACT('YEAR' from closing_date) multiple times across queries.
+
+2. Each row has an acquiring institution. It would be interesting to revisit
+the dataset and use some recursive queries to uncover chains of acquisitions.
+
+3. Normalizing the some columns such as state, acquiring institution, institution could make it easier to run queries related to who acquired which banks. FDIC has additional datasets that assign a unique id to institutions. An enhancement to this project would be to import all FDIC institutions and use that as a reference to normalize data for institutions in the bank failures dataset.
+
+## Helpful Links
 1. [generate_series() postgres docs](https://www.postgresql.org/docs/current/functions-srf.html)
 
 2. [timescale db - generate series explanation](https://www.timescale.com/blog/how-to-create-lots-of-sample-time-series-data-with-postgresql-generate_series/)
