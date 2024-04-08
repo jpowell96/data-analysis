@@ -1,0 +1,569 @@
+id,bank_name,city,state,cert,acquiring_institution,closing_date,fund
+40,Citizens Bank,Sac City,IA,8758,Iowa Trust & Savings Bank,2023-11-03,10545
+41,Heartland Tri-State Bank,Elkhart,KS,25851,"Dream First Bank, N.A.",2023-07-28,10544
+42,First Republic Bank,San Francisco,CA,59017,"JPMorgan Chase Bank, N.A.",2023-05-01,10543
+43,Signature Bank,New York,NY,57053,"Flagstar Bank, N.A.",2023-03-12,10540
+44,Silicon Valley Bank,Santa Clara,CA,24735,First-Citizens Bank & Trust Company,2023-03-10,10539
+45,Almena State Bank,Almena,KS,15426,Equity Bank,2020-10-23,10538
+46,First City Bank of Florida,Fort Walton Beach,FL,16748,"United Fidelity Bank, fsb",2020-10-16,10537
+47,The First State Bank,Barboursville,WV,14361,"MVB Bank, Inc.",2020-04-03,10536
+48,Ericson State Bank,Ericson,NE,18265,Farmers and Merchants Bank,2020-02-14,10535
+49,City National Bank of New Jersey,Newark,NJ,21111,Industrial Bank,2019-11-01,10534
+50,Resolute Bank,Maumee,OH,58317,Buckeye State Bank,2019-10-25,10533
+51,Louisa Community Bank,Louisa,KY,58112,Kentucky Farmers Bank Corporation,2019-10-25,10532
+52,The Enloe State Bank,Cooper,TX,10716,"Legend Bank, N. A.",2019-05-31,10531
+53,Washington Federal Bank for Savings,Chicago,IL,30570,Royal Savings Bank,2017-12-15,10530
+54,The Farmers and Merchants State Bank of Argonia,Argonia,KS,17719,Conway Bank,2017-10-13,10529
+55,Fayette County Bank,Saint Elmo,IL,1802,"United Fidelity Bank, fsb",2017-05-26,10528
+56,"Guaranty Bank, (d/b/a BestBank in Georgia & Michigan)",Milwaukee,WI,30003,First-Citizens Bank & Trust Company,2017-05-05,10527
+57,First NBC Bank,New Orleans,LA,58302,Whitney Bank,2017-04-28,10526
+58,Proficio Bank,Cottonwood Heights,UT,35495,Cache Valley Bank,2017-03-03,10525
+59,Seaway Bank and Trust Company,Chicago,IL,19328,State Bank of Texas,2017-01-27,10524
+60,Harvest Community Bank,Pennsville,NJ,34951,First-Citizens Bank & Trust Company,2017-01-13,10523
+61,Allied Bank,Mulberry,AR,91,Today's Bank,2016-09-23,10522
+62,The Woodbury Banking Company,Woodbury,GA,11297,United Bank,2016-08-19,10521
+63,First CornerStone Bank,King of Prussia,PA,35312,First-Citizens Bank & Trust Company,2016-05-06,10520
+64,Trust Company Bank,Memphis,TN,9956,The Bank of Fayette County,2016-04-29,10519
+65,North Milwaukee State Bank,Milwaukee,WI,20364,First-Citizens Bank & Trust Company,2016-03-11,10518
+66,Hometown National Bank,Longview,WA,35156,Twin City Bank,2015-10-02,10517
+67,The Bank of Georgia,Peachtree City,GA,35259,Fidelity Bank,2015-10-02,10516
+68,Premier Bank,Denver,CO,34112,"United Fidelity Bank, fsb",2015-07-10,10515
+69,Edgebrook Bank,Chicago,IL,57772,Republic Bank of Chicago,2015-05-08,10514
+70,Doral Bank,San Juan,PR,32102,Banco Popular de Puerto Rico,2015-02-27,10513
+71,Capitol City Bank & Trust Company,Atlanta,GA,33938,First-Citizens Bank & Trust Company,2015-02-13,10512
+72,Highland Community Bank,Chicago,IL,20290,"United Fidelity Bank, fsb",2015-01-23,10511
+73,First National Bank of Crestview,Crestview,FL,17557,First NBC Bank,2015-01-16,10510
+74,Northern Star Bank,Mankato,MN,34983,BankVista,2014-12-19,10509
+75,"Frontier Bank, FSB D/B/A El Paseo Bank",Palm Desert,CA,34738,"Bank of Southern California, N.A.",2014-11-07,10508
+76,The National Republic Bank of Chicago,Chicago,IL,916,State Bank of Texas,2014-10-24,10507
+77,NBRS Financial,Rising Sun,MD,4862,Howard Bank,2014-10-17,10506
+78,"GreenChoice Bank, fsb",Chicago,IL,28462,"Providence Bank, LLC",2014-07-25,10505
+79,Eastside Commercial Bank,Conyers,GA,58125,Community & Southern Bank,2014-07-18,10504
+80,The Freedom State Bank,Freedom,OK,12483,Alva State Bank & Trust Company,2014-06-27,10503
+81,Valley Bank,Fort Lauderdale,FL,21793,"Landmark Bank, National Association",2014-06-20,10501
+82,Valley Bank,Moline,IL,10450,Great Southern Bank,2014-06-20,10502
+83,Slavie Federal Savings Bank,Bel Air,MD,32368,"Bay Bank, FSB",2014-05-30,10500
+84,Columbia Savings Bank,Cincinnati,OH,32284,"United Fidelity Bank, fsb",2014-05-23,10499
+85,AztecAmerica Bank,Berwyn,IL,57866,Republic Bank of Chicago,2014-05-16,10498
+86,Allendale County Bank,Fairfax,SC,15062,Palmetto State Bank,2014-04-25,10497
+87,Vantage Point Bank,Horsham,PA,58531,First Choice Bank,2014-02-28,10496
+88,"Millennium Bank, National Association",Sterling,VA,35096,WashingtonFirst Bank,2014-02-28,10495
+89,Syringa Bank,Boise,ID,34296,Sunwest Bank,2014-01-31,10494
+90,The Bank of Union,El Reno,OK,17967,BancFirst,2014-01-24,10493
+91,DuPage National Bank,West Chicago,IL,5732,Republic Bank of Chicago,2014-01-17,10492
+92,"Texas Community Bank, National Association",The Woodlands,TX,57431,"Spirit of Texas Bank, SSB",2013-12-13,10491
+93,Bank of Jackson County,Graceville,FL,14794,First Federal Bank of Florida,2013-10-30,10490
+94,First National Bank also operating as The National Bank of El Paso,Edinburg,TX,14318,PlainsCapital Bank,2013-09-13,10488
+95,The Community's Bank,Bridgeport,CT,57041,No Acquirer,2013-09-13,10489
+96,Sunrise Bank of Arizona,Phoenix,AZ,34707,"First Fidelity Bank, National Association",2013-08-23,10487
+97,Community South Bank,Parsons,TN,19849,"CB&S Bank, Inc.",2013-08-23,10486
+98,Bank of Wausau,Wausau,WI,35016,Nicolet National Bank,2013-08-09,10485
+99,First Community Bank of Southwest Florida (also operating as Community Bank of Cape Coral),Fort Myers,FL,34943,C1 Bank,2013-08-02,10484
+100,Mountain National Bank,Sevierville,TN,34789,"First Tennessee Bank, National Association",2013-06-07,10483
+101,1st Commerce Bank,North Las Vegas,NV,58358,Plaza Bank,2013-06-06,10482
+102,Banks of Wisconsin d/b/a Bank of Kenosha,Kenosha,WI,35386,"North Shore Bank, FSB",2013-05-31,10478
+103,Central Arizona Bank,Scottsdale,AZ,34527,Western State Bank,2013-05-14,10479
+104,Sunrise Bank,Valdosta,GA,58185,Synovus Bank,2013-05-10,10481
+105,Pisgah Community Bank,Asheville,NC,58701,"Capital Bank, N.A.",2013-05-10,10480
+106,Douglas County Bank,Douglasville,GA,21649,Hamilton State Bank,2013-04-26,10476
+107,Parkway Bank,Lenoir,NC,57158,"CertusBank, National Association",2013-04-26,10477
+108,Chipola Community Bank,Marianna,FL,58034,First Federal Bank of Florida,2013-04-19,10473
+109,Heritage Bank of North Florida,Orange Park,FL,26680,FirstAtlantic Bank,2013-04-19,10475
+110,First Federal Bank,Lexington,KY,29594,Your Community Bank,2013-04-19,10474
+111,Gold Canyon Bank,Gold Canyon,AZ,58066,"First Scottsdale Bank, National Association",2013-04-05,10472
+112,Frontier Bank,LaGrange,GA,16431,HeritageBank of the South,2013-03-08,10471
+113,Covenant Bank,Chicago,IL,22476,Liberty Bank and Trust Company,2013-02-15,10470
+114,1st Regents Bank,Andover,MN,57157,First Minnesota Bank,2013-01-18,10469
+115,Westside Community Bank,University Place,WA,33997,Sunwest Bank,2013-01-11,10468
+116,Community Bank of the Ozarks,Sunrise Beach,MO,27331,Bank of Sullivan,2012-12-14,10467
+117,Hometown Community Bank,Braselton,GA,57928,"CertusBank, National Association",2012-11-16,10466
+118,Citizens First National Bank,Princeton,IL,3731,Heartland Bank and Trust Company,2012-11-02,10464
+119,Heritage Bank of Florida,Lutz,FL,35009,Centennial Bank,2012-11-02,10465
+120,NOVA Bank,Berwyn,PA,27148,No Acquirer,2012-10-26,10463
+121,Excel Bank,Sedalia,MO,19189,Simmons First National Bank,2012-10-19,10460
+122,First East Side Savings Bank,Tamarac,FL,28144,Stearns Bank N.A.,2012-10-19,10461
+123,GulfSouth Private Bank,Destin,FL,58073,SmartBank,2012-10-19,10462
+124,First United Bank,Crete,IL,20685,"Old Plank Trail Community Bank, National Association",2012-09-28,10459
+125,Truman Bank,St. Louis,MO,27316,Simmons First National Bank,2012-09-14,10458
+126,First Commercial Bank,Bloomington,MN,35246,Republic Bank & Trust Company,2012-09-07,10457
+127,Waukegan Savings Bank,Waukegan,IL,28243,First Midwest Bank,2012-08-03,10456
+128,Jasper Banking Company,Jasper,GA,16240,Stearns Bank N.A.,2012-07-27,10455
+129,Second Federal Savings and Loan Association of Chicago,Chicago,IL,27986,Hinsdale Bank & Trust Company,2012-07-20,10453
+130,Heartland Bank,Leawood,KS,1361,Metcalf Bank,2012-07-20,10452
+131,First Cherokee State Bank,Woodstock,GA,32711,Community & Southern Bank,2012-07-20,10450
+132,Georgia Trust Bank,Buford,GA,57847,Community & Southern Bank,2012-07-20,10451
+133,The Royal Palm Bank of Florida,Naples,FL,57096,First National Bank of the Gulf Coast,2012-07-20,10454
+134,Glasgow Savings Bank,Glasgow,MO,1056,Regional Missouri Bank,2012-07-13,10449
+135,Montgomery Bank & Trust,Ailey,GA,19498,Ameris Bank,2012-07-06,10448
+136,The Farmers Bank of Lynchburg,Lynchburg,TN,1690,Clayton Bank and Trust,2012-06-15,10447
+137,Security Exchange Bank,Marietta,GA,35299,Fidelity Bank,2012-06-15,10446
+138,Putnam State Bank,Palatka,FL,27405,Harbor Community Bank,2012-06-15,10445
+139,Waccamaw Bank,Whiteville,NC,34515,First Community Bank,2012-06-08,10444
+140,Farmers' and Traders' State Bank,Shabbona,IL,9257,First State Bank,2012-06-08,10442
+141,Carolina Federal Savings Bank,Charleston,SC,35372,Bank of North Carolina,2012-06-08,10441
+142,First Capital Bank,Kingfisher,OK,416,F & M Bank,2012-06-08,10443
+143,"Alabama Trust Bank, National Association",Sylacauga,AL,35224,Southern States Bank,2012-05-18,10440
+144,"Security Bank, National Association",North Lauderdale,FL,23156,Banesco USA,2012-05-04,10439
+145,Palm Desert National Bank,Palm Desert,CA,23632,Pacific Premier Bank,2012-04-27,10437
+146,Plantation Federal Bank,Pawleys Island,SC,32503,First Federal Bank,2012-04-27,10438
+147,"Inter Savings Bank, fsb D/B/A InterBank, fsb",Maple Grove,MN,31495,Great Southern Bank,2012-04-27,10436
+148,HarVest Bank of Maryland,Gaithersburg,MD,57766,Sonabank,2012-04-27,10435
+149,Bank of the Eastern Shore,Cambridge,MD,26759,No Acquirer,2012-04-27,10434
+150,"Fort Lee Federal Savings Bank, FSB",Fort Lee,NJ,35527,Alma Bank,2012-04-20,10433
+151,Fidelity Bank,Dearborn,MI,33883,The Huntington National Bank,2012-03-30,10432
+152,Premier Bank,Wilmette,IL,35419,International Bank of Chicago,2012-03-23,10431
+153,Covenant Bank & Trust,Rock Spring,GA,58068,"Stearns Bank, N.A.",2012-03-23,10430
+154,New City Bank,Chicago,IL,57597,No Acquirer,2012-03-09,10429
+155,Global Commerce Bank,Doraville,GA,34046,Metro City Bank,2012-03-02,10428
+156,Home Savings of America,Little Falls,MN,29178,No Acquirer,2012-02-24,10427
+157,Central Bank of Georgia,Ellaville,GA,5687,Ameris Bank,2012-02-24,10426
+158,SCB Bank,Shelbyville,IN,29761,"First Merchants Bank, National Association",2012-02-10,10425
+159,Charter National Bank and Trust,Hoffman Estates,IL,23187,"Barrington Bank & Trust Company, National Association",2012-02-10,10424
+160,BankEast,Knoxville,TN,19869,"U.S. Bank, N.A.",2012-01-27,10420
+161,Patriot Bank Minnesota,Forest Lake,MN,34823,First Resource Bank,2012-01-27,10422
+162,Tennessee Commerce Bank,Franklin,TN,35296,Republic Bank & Trust Company,2012-01-27,10423
+163,First Guaranty Bank and Trust Company of Jacksonville,Jacksonville,FL,16579,"CenterState Bank of Florida, N.A.",2012-01-27,10421
+164,American Eagle Savings Bank,Boothwyn,PA,31581,"Capital Bank, N.A.",2012-01-20,10417
+165,The First State Bank,Stockbridge,GA,19252,Hamilton State Bank,2012-01-20,10419
+166,Central Florida State Bank,Belleview,FL,57186,"CenterState Bank of Florida, N.A.",2012-01-20,10418
+167,Western National Bank,Phoenix,AZ,57917,Washington Federal,2011-12-16,10416
+168,Premier Community Bank of the Emerald Coast,Crestview,FL,58343,Summit Bank,2011-12-16,10415
+169,Central Progressive Bank,Lacombe,LA,19657,First NBC Bank,2011-11-18,10413
+170,Polk County Bank,Johnston,IA,14194,Grinnell State Bank,2011-11-18,10414
+171,Community Bank of Rockmart,Rockmart,GA,57860,Century Bank of Georgia,2011-11-10,10412
+172,SunFirst Bank,Saint George,UT,57087,Cache Valley Bank,2011-11-04,10411
+173,"Mid City Bank, Inc.",Omaha,NE,19397,Premier Bank,2011-11-04,10410
+174,All American Bank,Des Plaines,IL,57759,International Bank of Chicago,2011-10-28,10409
+175,Community Banks of Colorado,Greenwood Village,CO,21132,"Bank Midwest, N.A.",2011-10-21,10405
+391,Waterfield Bank,Germantown,MD,34976,No Acquirer,2010-03-05,10190
+176,Community Capital Bank,Jonesboro,GA,57036,State Bank and Trust Company,2011-10-21,10406
+177,Decatur First Bank,Decatur,GA,34392,Fidelity Bank,2011-10-21,10407
+178,Old Harbor Bank,Clearwater,FL,57537,1st United Bank,2011-10-21,10408
+179,Country Bank,Aledo,IL,35395,Blackhawk Bank & Trust,2011-10-14,10402
+180,First State Bank,Cranford,NJ,58046,Northfield Bank,2011-10-14,10403
+181,"Blue Ridge Savings Bank, Inc.",Asheville,NC,32347,Bank of North Carolina,2011-10-14,10401
+182,Piedmont Community Bank,Gray,GA,57256,State Bank and Trust Company,2011-10-14,10404
+183,Sun Security Bank,Ellington,MO,20115,Great Southern Bank,2011-10-07,10400
+184,The RiverBank,Wyoming,MN,10216,Central Bank,2011-10-07,10399
+185,First International Bank,Plano,TX,33513,American First National Bank,2011-09-30,10398
+186,Citizens Bank of Northern California,Nevada City,CA,33983,Tri Counties Bank,2011-09-23,10397
+187,Bank of the Commonwealth,Norfolk,VA,20408,Southern Bank and Trust Company,2011-09-23,10396
+188,The First National Bank of Florida,Milton,FL,25155,CharterBank,2011-09-09,10395
+189,CreekSide Bank,Woodstock,GA,58226,Georgia Commerce Bank,2011-09-02,10393
+190,Patriot Bank of Georgia,Cumming,GA,58273,Georgia Commerce Bank,2011-09-02,10394
+191,First Choice Bank,Geneva,IL,57212,Inland Bank & Trust,2011-08-19,10390
+192,First Southern National Bank,Statesboro,GA,57239,Heritage Bank of the South,2011-08-19,10391
+193,Lydian Private Bank,Palm Beach,FL,35356,"Sabadell United Bank, N.A.",2011-08-19,10392
+194,Public Savings Bank,Huntingdon Valley,PA,34130,"Capital Bank, N.A.",2011-08-18,10389
+195,The First National Bank of Olathe,Olathe,KS,4744,Enterprise Bank & Trust,2011-08-12,10388
+196,Bank of Whitman,Colfax,WA,22528,Columbia State Bank,2011-08-05,10387
+197,Bank of Shorewood,Shorewood,IL,22637,Heartland Bank and Trust Company,2011-08-05,10386
+198,Integra Bank National Association,Evansville,IN,4392,Old National Bank,2011-07-29,10384
+199,"BankMeridian, N.A.",Columbia,SC,58222,SCBT National Association,2011-07-29,10383
+200,Virginia Business Bank,Richmond,VA,58283,Xenith Bank,2011-07-29,10385
+201,Bank of Choice,Greeley,CO,2994,"Bank Midwest, N.A.",2011-07-22,10380
+202,LandMark Bank of Florida,Sarasota,FL,35244,American Momentum Bank,2011-07-22,10381
+203,Southshore Community Bank,Apollo Beach,FL,58056,American Momentum Bank,2011-07-22,10382
+204,Summit Bank,Prescott,AZ,57442,The Foothills Bank,2011-07-15,10379
+205,First Peoples Bank,Port St. Lucie,FL,34870,"Premier American Bank, N.A.",2011-07-15,10376
+206,High Trust Bank,Stockbridge,GA,19554,Ameris Bank,2011-07-15,10377
+207,One Georgia Bank,Atlanta,GA,58238,Ameris Bank,2011-07-15,10378
+208,Signature Bank,Windsor,CO,57835,Points West Community Bank,2011-07-08,10375
+209,Colorado Capital Bank,Castle Rock,CO,34522,First-Citizens Bank & Trust Company,2011-07-08,10373
+210,First Chicago Bank & Trust,Chicago,IL,27935,Northbrook Bank & Trust Company,2011-07-08,10374
+211,Mountain Heritage Bank,Clayton,GA,57593,First American Bank and Trust Company,2011-06-24,10372
+212,First Commercial Bank of Tampa Bay,Tampa,FL,27583,Stonegate Bank,2011-06-17,10370
+213,McIntosh State Bank,Jackson,GA,19237,Hamilton State Bank,2011-06-17,10371
+214,Atlantic Bank and Trust,Charleston,SC,58420,"First Citizens Bank and Trust Company, Inc.",2011-06-03,10369
+215,First Heritage Bank,Snohomish,WA,23626,Columbia State Bank,2011-05-27,10368
+216,Summit Bank,Burlington,WA,513,Columbia State Bank,2011-05-20,10367
+217,First Georgia Banking Company,Franklin,GA,57647,"CertusBank, National Association",2011-05-20,10366
+218,Atlantic Southern Bank,Macon,GA,57213,"CertusBank, National Association",2011-05-20,10365
+219,Coastal Bank,Cocoa Beach,FL,34898,"Florida Community Bank, a division of Premier American Bank, N.A.",2011-05-06,10364
+220,Community Central Bank,Mount Clemens,MI,34234,Talmer Bank & Trust,2011-04-29,10359
+221,The Park Avenue Bank,Valdosta,GA,19797,Bank of the Ozarks,2011-04-29,10363
+222,First Choice Community Bank,Dallas,GA,58539,Bank of the Ozarks,2011-04-29,10361
+223,Cortez Community Bank,Brooksville,FL,57625,"Florida Community Bank, a division of Premier American Bank, N.A.",2011-04-29,10360
+224,First National Bank of Central Florida,Winter Park,FL,26297,"Florida Community Bank, a division of Premier American Bank, N.A.",2011-04-29,10362
+225,Heritage Banking Group,Carthage,MS,14273,Trustmark National Bank,2011-04-15,10354
+226,Rosemount National Bank,Rosemount,MN,24099,Central Bank,2011-04-15,10357
+227,Superior Bank,Birmingham,AL,17750,"Superior Bank, National Association",2011-04-15,10358
+228,Nexity Bank,Birmingham,AL,19794,AloStar Bank of Commerce,2011-04-15,10356
+229,New Horizons Bank,East Ellijay,GA,57705,Citizens South Bank,2011-04-15,10355
+230,Bartow County Bank,Cartersville,GA,21495,Hamilton State Bank,2011-04-15,10353
+231,Nevada Commerce Bank,Las Vegas,NV,35418,City National Bank,2011-04-08,10351
+232,Western Springs National Bank and Trust,Western Springs,IL,10086,Heartland Bank and Trust Company,2011-04-08,10352
+233,The Bank of Commerce,Wood Dale,IL,34292,Advantage National Bank Group,2011-03-25,10350
+234,Legacy Bank,Milwaukee,WI,34818,Seaway Bank and Trust Company,2011-03-11,10348
+235,First National Bank of Davis,Davis,OK,4077,The Pauls Valley National Bank,2011-03-11,10349
+236,Valley Community Bank,St. Charles,IL,34187,First State Bank,2011-02-25,10347
+237,"San Luis Trust Bank, FSB",San Luis Obispo,CA,34783,First California Bank,2011-02-18,10346
+238,Charter Oak Bank,Napa,CA,57855,Bank of Marin,2011-02-18,10343
+239,Citizens Bank of Effingham,Springfield,GA,34601,Heritage Bank of the South,2011-02-18,10344
+240,Habersham Bank,Clarkesville,GA,151,SCBT National Association,2011-02-18,10345
+241,Canyon National Bank,Palm Springs,CA,34692,Pacific Premier Bank,2011-02-11,10340
+242,Badger State Bank,Cassville,WI,13272,Royal Bank,2011-02-11,10339
+243,Peoples State Bank,Hamtramck,MI,14939,First Michigan Bank,2011-02-11,10341
+244,Sunshine State Community Bank,Port Orange,FL,35478,"Premier American Bank, N.A.",2011-02-11,10342
+245,Community First Bank Chicago,Chicago,IL,57948,Northbrook Bank & Trust Company,2011-02-04,10337
+246,North Georgia Bank,Watkinsville,GA,35242,BankSouth,2011-02-04,10338
+247,American Trust Bank,Roswell,GA,57432,Renasant Bank,2011-02-04,10336
+248,First Community Bank,Taos,NM,12261,"U.S. Bank, N.A.",2011-01-28,10333
+249,FirsTier Bank,Louisville,CO,57646,No Acquirer,2011-01-28,10334
+250,Evergreen State Bank,Stoughton,WI,5328,McFarland State Bank,2011-01-28,10332
+251,The First State Bank,Camargo,OK,2303,Bank 7,2011-01-28,10335
+252,United Western Bank,Denver,CO,31293,First-Citizens Bank & Trust Company,2011-01-21,10331
+253,The Bank of Asheville,Asheville,NC,34516,First Bank,2011-01-21,10330
+254,CommunitySouth Bank & Trust,Easley,SC,57868,"CertusBank, National Association",2011-01-21,10328
+255,Enterprise Banking Company,McDonough,GA,19758,No Acquirer,2011-01-21,10329
+256,Oglethorpe Bank,Brunswick,GA,57440,Bank of the Ozarks,2011-01-14,10327
+257,Legacy Bank,Scottsdale,AZ,57820,Enterprise Bank & Trust,2011-01-07,10326
+258,First Commercial Bank of Florida,Orlando,FL,34965,First Southern Bank,2011-01-07,10325
+259,Community National Bank,Lino Lakes,MN,23306,Farmers & Merchants Savings Bank,2010-12-17,10321
+260,First Southern Bank,Batesville,AR,58052,Southern Bank,2010-12-17,10322
+261,"United Americas Bank, N.A.",Atlanta,GA,35065,State Bank and Trust Company,2010-12-17,10323
+262,"Appalachian Community Bank, FSB",McCaysville,GA,58495,Peoples Bank of East Tennessee,2010-12-17,10319
+263,Chestatee State Bank,Dawsonville,GA,34578,Bank of the Ozarks,2010-12-17,10320
+264,"The Bank of Miami,N.A.",Coral Gables,FL,19040,1st United Bank,2010-12-17,10324
+265,Earthstar Bank,Southampton,PA,35561,Polonia Bank,2010-12-10,10317
+266,Paramount Bank,Farmington Hills,MI,34673,Level One Bank,2010-12-10,10318
+267,First Banking Center,Burlington,WI,5287,First Michigan Bank,2010-11-19,10315
+268,Allegiance Bank of North America,Bala Cynwyd,PA,35078,VIST Bank,2010-11-19,10314
+269,Gulf State Community Bank,Carrabelle,FL,20340,Centennial Bank,2010-11-19,10316
+270,Copper Star Bank,Scottsdale,AZ,35463,"Stearns Bank, N.A.",2010-11-12,10311
+271,Darby Bank & Trust Co.,Vidalia,GA,14580,Ameris Bank,2010-11-12,10312
+272,Tifton Banking Company,Tifton,GA,57831,Ameris Bank,2010-11-12,10313
+273,First Vietnamese American Bank,Westminster,CA,57885,Grandpoint Bank,2010-11-05,10307
+274,Pierce Commercial Bank,Tacoma,WA,34411,Heritage Bank,2010-11-05,10309
+275,Western Commercial Bank,Woodland Hills,CA,58087,First California Bank,2010-11-05,10310
+276,K Bank,Randallstown,MD,31263,Manufacturers and Traders Trust Company (M&T Bank),2010-11-05,10308
+277,"First Arizona Savings, A FSB",Scottsdale,AZ,32582,No Acquirer,2010-10-22,10306
+278,Hillcrest Bank,Overland Park,KS,22173,"Hillcrest Bank, N.A.",2010-10-22,10302
+279,First Suburban National Bank,Maywood,IL,16089,Seaway Bank and Trust Company,2010-10-22,10301
+280,The First National Bank of Barnesville,Barnesville,GA,2119,United Bank,2010-10-22,10304
+281,The Gordon Bank,Gordon,GA,33904,Morris Bank,2010-10-22,10305
+282,Progress Bank of Florida,Tampa,FL,32251,Bay Cities Bank,2010-10-22,10303
+283,First Bank of Jacksonville,Jacksonville,FL,27573,Ameris Bank,2010-10-22,10300
+284,Premier Bank,Jefferson City,MO,34016,Providence Bank,2010-10-15,10297
+285,WestBridge Bank and Trust Company,Chesterfield,MO,58205,Midland States Bank,2010-10-15,10299
+286,"Security Savings Bank, F.S.B.",Olathe,KS,30898,Simmons First National Bank,2010-10-15,10298
+287,Shoreline Bank,Shoreline,WA,35250,GBC International Bank,2010-10-01,10295
+288,Wakulla Bank,Crawfordville,FL,21777,Centennial Bank,2010-10-01,10296
+289,North County Bank,Arlington,WA,35053,Whidbey Island Bank,2010-09-24,10294
+290,Haven Trust Bank Florida,Ponte Vedra Beach,FL,58308,First Southern Bank,2010-09-24,10293
+291,Maritime Savings Bank,West Allis,WI,28612,"North Shore Bank, FSB",2010-09-17,10291
+292,Bramble Savings Bank,Milford,OH,27808,Foundation Bank,2010-09-17,10288
+293,The Peoples Bank,Winder,GA,182,Community & Southern Bank,2010-09-17,10292
+294,First Commerce Community Bank,Douglasville,GA,57448,Community & Southern Bank,2010-09-17,10289
+295,Bank of Ellijay,Ellijay,GA,58197,Community & Southern Bank,2010-09-17,10287
+296,ISN Bank,Cherry Hill,NJ,57107,Customers Bank,2010-09-17,10290
+297,Horizon Bank,Bradenton,FL,35061,Bank of the Ozarks,2010-09-10,10286
+298,Sonoma Valley Bank,Sonoma,CA,27259,Westamerica Bank,2010-08-20,10285
+299,Los Padres Bank,Solvang,CA,32165,Pacific Western Bank,2010-08-20,10282
+300,Butte Community Bank,Chico,CA,33219,"Rabobank, N.A.",2010-08-20,10278
+301,Pacific State Bank,Stockton,CA,27090,"Rabobank, N.A.",2010-08-20,10283
+302,ShoreBank,Chicago,IL,15640,Urban Partnership Bank,2010-08-20,10284
+303,Imperial Savings and Loan Association,Martinsville,VA,31623,"River Community Bank, N.A.",2010-08-20,10280
+304,Independent National Bank,Ocala,FL,27344,"CenterState Bank of Florida, N.A.",2010-08-20,10281
+305,Community National Bank at Bartow,Bartow,FL,25266,"CenterState Bank of Florida, N.A.",2010-08-20,10279
+306,Palos Bank and Trust Company,Palos Heights,IL,17599,First Midwest Bank,2010-08-13,10277
+307,Ravenswood Bank,Chicago,IL,34231,Northbrook Bank & Trust Company,2010-08-06,10276
+308,LibertyBank,Eugene,OR,31964,Home Federal Bank,2010-07-30,10273
+309,The Cowlitz Bank,Longview,WA,22643,Heritage Bank,2010-07-30,10275
+310,Coastal Community Bank,Panama City Beach,FL,9619,Centennial Bank,2010-07-30,10272
+311,Bayside Savings Bank,Port Saint Joe,FL,57669,Centennial Bank,2010-07-30,10271
+312,Northwest Bank & Trust,Acworth,GA,57658,State Bank and Trust Company,2010-07-30,10274
+313,Home Valley Bank,Cave Junction,OR,23181,South Valley Bank & Trust,2010-07-23,10266
+314,SouthwestUSA Bank,Las Vegas,NV,35434,Plaza Bank,2010-07-23,10267
+315,Community Security Bank,New Prague,MN,34486,Roundbank,2010-07-23,10264
+316,Thunder Bank,Sylvan Grove,KS,10506,The Bennington State Bank,2010-07-23,10269
+317,Williamsburg First National Bank,Kingstree,SC,17837,"First Citizens Bank and Trust Company, Inc.",2010-07-23,10270
+318,Crescent Bank and Trust Company,Jasper,GA,27559,Renasant Bank,2010-07-23,10265
+319,Sterling Bank,Lantana,FL,32536,IBERIABANK,2010-07-23,10268
+320,"Mainstreet Savings Bank, FSB",Hastings,MI,28136,Commercial Bank,2010-07-16,10258
+321,Olde Cypress Community Bank,Clewiston,FL,28864,"CenterState Bank of Florida, N.A.",2010-07-16,10260
+322,Turnberry Bank,Aventura,FL,32280,NAFH National Bank,2010-07-16,10261
+323,Metro Bank of Dade County,Miami,FL,25172,NAFH National Bank,2010-07-16,10259
+324,First National Bank of the South,Spartanburg,SC,35383,NAFH National Bank,2010-07-16,10263
+325,Woodlands Bank,Bluffton,SC,32571,Bank of the Ozarks,2010-07-16,10262
+326,Home National Bank,Blackwell,OK,11636,RCB Bank,2010-07-09,10256
+327,USA Bank,Port Chester,NY,58072,New Century Bank,2010-07-09,10254
+328,Ideal Federal Savings Bank,Baltimore,MD,32456,No Acquirer,2010-07-09,10257
+329,Bay National Bank,Baltimore,MD,35462,"Bay Bank, FSB",2010-07-09,10255
+330,High Desert State Bank,Albuquerque,NM,35279,First American Bank,2010-06-25,10252
+331,First National Bank,Savannah,GA,34152,"The Savannah Bank, N.A.",2010-06-25,10251
+332,Peninsula Bank,Englewood,FL,26563,"Premier American Bank, N.A.",2010-06-25,10253
+333,Nevada Security Bank,Reno,NV,57110,Umpqua Bank,2010-06-18,10250
+334,Washington First International Bank,Seattle,WA,32955,East West Bank,2010-06-11,10249
+335,TierOne Bank,Lincoln,NE,29341,Great Western Bank,2010-06-04,10248
+336,Arcola Homestead Savings Bank,Arcola,IL,31813,No Acquirer,2010-06-04,10246
+337,First National Bank,Rosedale,MS,15814,The Jefferson Bank,2010-06-04,10247
+338,Sun West Bank,Las Vegas,NV,34785,City National Bank,2010-05-28,10245
+339,"Granite Community Bank, NA",Granite Bay,CA,57315,Tri Counties Bank,2010-05-28,10244
+340,Bank of Florida - Tampa,Tampa,FL,57814,EverBank,2010-05-28,10243
+341,Bank of Florida - Southwest,Naples,FL,35106,EverBank,2010-05-28,10242
+342,Bank of Florida - Southeast,Fort Lauderdale,FL,57360,EverBank,2010-05-28,10241
+343,Pinehurst Bank,Saint Paul,MN,57735,Coulee Bank,2010-05-21,10240
+344,Midwest Bank and Trust Company,Elmwood Park,IL,18117,"FirstMerit Bank, N.A.",2010-05-14,10236
+345,Southwest Community Bank,Springfield,MO,34255,Simmons First National Bank,2010-05-14,10239
+346,New Liberty Bank,Plymouth,MI,35586,Bank of Ann Arbor,2010-05-14,10237
+347,Satilla Community Bank,Saint Marys,GA,35114,Ameris Bank,2010-05-14,10238
+348,1st Pacific Bank of California,San Diego,CA,35517,City National Bank,2010-05-07,10232
+349,Towne Bank of Arizona,Mesa,AZ,57697,Commerce Bank of Arizona,2010-05-07,10235
+350,Access Bank,Champlin,MN,16476,PrinsBank,2010-05-07,10233
+351,The Bank of Bonifay,Bonifay,FL,14246,First Federal Bank of Florida,2010-05-07,10234
+352,Frontier Bank,Everett,WA,22710,"Union Bank, N.A.",2010-04-30,10228
+353,BC National Banks,Butler,MO,17792,Community First Bank,2010-04-30,10225
+354,Champion Bank,Creve Coeur,MO,58362,BankLiberty,2010-04-30,10227
+355,CF Bancorp,Port Huron,MI,30005,First Michigan Bank,2010-04-30,10226
+356,Westernbank Puerto Rico,Mayaguez,PR,31027,Banco Popular de Puerto Rico,2010-04-30,10231
+357,R-G Premier Bank of Puerto Rico,Hato Rey,PR,32185,Scotiabank de Puerto Rico,2010-04-30,10230
+358,Eurobank,San Juan,PR,27150,Oriental Bank and Trust,2010-04-30,10229
+359,Wheatland Bank,Naperville,IL,58429,Wheaton Bank & Trust,2010-04-23,10224
+360,Peotone Bank and Trust Company,Peotone,IL,10888,First Midwest Bank,2010-04-23,10223
+361,Lincoln Park Savings Bank,Chicago,IL,30600,Northbrook Bank & Trust Company,2010-04-23,10221
+362,New Century Bank,Chicago,IL,34821,"MB Financial Bank, N.A.",2010-04-23,10222
+363,Citizens Bank and Trust Company of Chicago,Chicago,IL,34658,Republic Bank of Chicago,2010-04-23,10220
+364,Broadway Bank,Chicago,IL,22853,"MB Financial Bank, N.A.",2010-04-23,10219
+365,"Amcore Bank, National Association",Rockford,IL,3735,Harris N.A.,2010-04-23,10218
+366,City Bank,Lynnwood,WA,21521,Whidbey Island Bank,2010-04-16,10212
+367,Tamalpais Bank,San Rafael,CA,33493,"Union Bank, N.A.",2010-04-16,10217
+368,Innovative Bank,Oakland,CA,23876,Center Bank,2010-04-16,10214
+369,Butler Bank,Lowell,MA,26619,People's United Bank,2010-04-16,10211
+370,Riverside National Bank of Florida,Fort Pierce,FL,24067,"TD Bank, N.A.",2010-04-16,10216
+371,AmericanFirst Bank,Clermont,FL,57724,"TD Bank, N.A.",2010-04-16,10210
+372,First Federal Bank of North Florida,Palatka,FL,28886,"TD Bank, N.A.",2010-04-16,10213
+373,Lakeside Community Bank,Sterling Heights,MI,34878,No Acquirer,2010-04-16,10215
+374,Beach First National Bank,Myrtle Beach,SC,34242,Bank of North Carolina,2010-04-09,10209
+375,Desert Hills Bank,Phoenix,AZ,57060,New York Community Bank,2010-03-26,10205
+376,Unity National Bank,Cartersville,GA,34678,Bank of the Ozarks,2010-03-26,10208
+377,Key West Bank,Key West,FL,34684,Centennial Bank,2010-03-26,10206
+378,McIntosh Commercial Bank,Carrollton,GA,57399,CharterBank,2010-03-26,10207
+379,State Bank of Aurora,Aurora,MN,8221,Northern State Bank,2010-03-19,10203
+380,First Lowndes Bank,Fort Deposit,AL,24957,First Citizens Bank,2010-03-19,10204
+381,Bank of Hiawassee,Hiawassee,GA,10054,Citizens South Bank,2010-03-19,10202
+382,Appalachian Community Bank,Ellijay,GA,33989,Community & Southern Bank,2010-03-19,10199
+383,Advanta Bank Corp.,Draper,UT,33535,No Acquirer,2010-03-19,10200
+384,Century Security Bank,Duluth,GA,58104,Bank of Upson,2010-03-19,10198
+385,American National Bank,Parma,OH,18806,The National Bank and Trust Company,2010-03-19,10201
+386,Statewide Bank,Covington,LA,29561,Home Bank,2010-03-12,10196
+387,Old Southern Bank,Orlando,FL,58182,Centennial Bank,2010-03-12,10197
+388,The Park Avenue Bank,New York,NY,27096,Valley National Bank,2010-03-12,10195
+389,LibertyPointe Bank,New York,NY,58071,Valley National Bank,2010-03-11,10194
+390,Centennial Bank,Ogden,UT,34430,No Acquirer,2010-03-05,10193
+392,Bank of Illinois,Normal,IL,9268,Heartland Bank and Trust Company,2010-03-05,10191
+393,Sun American Bank,Boca Raton,FL,27126,First-Citizens Bank & Trust Company,2010-03-05,10192
+394,Rainier Pacific Bank,Tacoma,WA,38129,Umpqua Bank,2010-02-26,10189
+395,Carson River Community Bank,Carson City,NV,58352,Heritage Bank of Nevada,2010-02-26,10188
+396,"La Jolla Bank, FSB",La Jolla,CA,32423,"OneWest Bank, FSB",2010-02-19,10185
+397,George Washington Savings Bank,Orland Park,IL,29952,"FirstMerit Bank, N.A.",2010-02-19,10184
+398,The La Coste National Bank,La Coste,TX,3287,Community National Bank,2010-02-19,10186
+399,Marco Community Bank,Marco Island,FL,57586,Mutual of Omaha Bank,2010-02-19,10187
+400,1st American State Bank of Minnesota,Hancock,MN,15448,"Community Development Bank, FSB",2010-02-05,10183
+401,American Marine Bank,Bainbridge Island,WA,16730,Columbia State Bank,2010-01-29,10178
+402,First Regional Bank,Los Angeles,CA,23011,First-Citizens Bank & Trust Company,2010-01-29,10177
+403,Community Bank and Trust,Cornelia,GA,5702,SCBT National Association,2010-01-29,10180
+404,"Marshall Bank, N.A.",Hallock,MN,16133,United Valley Bank,2010-01-29,10182
+405,Florida Community Bank,Immokalee,FL,5672,"Premier American Bank, N.A.",2010-01-29,10181
+406,First National Bank of Georgia,Carrollton,GA,16480,Community & Southern Bank,2010-01-29,10179
+407,Columbia River Bank,The Dalles,OR,22469,Columbia State Bank,2010-01-22,10176
+408,Evergreen Bank,Seattle,WA,20501,Umpqua Bank,2010-01-22,10172
+409,Charter Bank,Santa Fe,NM,32498,Charter Bank,2010-01-22,10175
+410,Bank of Leeton,Leeton,MO,8265,"Sunflower Bank, N.A.",2010-01-22,10174
+411,Premier American Bank,Miami,FL,57147,"Premier American Bank, N.A.",2010-01-22,10173
+412,Barnes Banking Company,Kaysville,UT,1252,No Acquirer,2010-01-15,10171
+413,St. Stephen State Bank,St. Stephen,MN,17522,First State Bank of St. Joseph,2010-01-15,10169
+414,Town Community Bank & Trust,Antioch,IL,34705,First American Bank,2010-01-15,10170
+415,Horizon Bank,Bellingham,WA,22977,Washington Federal Savings and Loan Association,2010-01-08,10168
+416,"First Federal Bank of California, F.S.B.",Santa Monica,CA,28536,"OneWest Bank, FSB",2009-12-18,10167
+417,Imperial Capital Bank,La Jolla,CA,26348,City National Bank,2009-12-18,10161
+418,Independent Bankers' Bank,Springfield,IL,26820,The Independent BankersBank (TIB),2009-12-18,10166
+419,New South Federal Savings Bank,Irondale,AL,32276,Beal Bank,2009-12-18,10163
+420,Citizens State Bank,New Baltimore,MI,1006,No Acquirer,2009-12-18,10162
+421,Peoples First Community Bank,Panama City,FL,32167,Hancock Bank,2009-12-18,10165
+422,RockBridge Commercial Bank,Atlanta,GA,58315,No Acquirer,2009-12-18,10164
+423,SolutionsBank,Overland Park,KS,4731,Arvest Bank,2009-12-11,10160
+424,"Valley Capital Bank, N.A.",Mesa,AZ,58399,Enterprise Bank & Trust,2009-12-11,10159
+425,"Republic Federal Bank, N.A.",Miami,FL,22846,1st United Bank,2009-12-11,10158
+426,Greater Atlantic Bank,Reston,VA,32583,Sonabank,2009-12-04,10156
+427,Benchmark Bank,Aurora,IL,10440,"MB Financial Bank, N.A.",2009-12-04,10154
+428,AmTrust Bank,Cleveland,OH,29776,New York Community Bank,2009-12-04,10155
+429,The Tattnall Bank,Reidsville,GA,12080,Heritage Bank of the South,2009-12-04,10153
+430,First Security National Bank,Norcross,GA,26290,State Bank and Trust Company,2009-12-04,10157
+431,The Buckhead Community Bank,Atlanta,GA,34663,State Bank and Trust Company,2009-12-04,10152
+432,Commerce Bank of Southwest Florida,Fort Myers,FL,58016,Central Bank,2009-11-20,10151
+433,Pacific Coast National Bank,San Clemente,CA,57914,Sunwest Bank,2009-11-13,10150
+434,Orion Bank,Naples,FL,22427,IBERIABANK,2009-11-13,10149
+435,"Century Bank, F.S.B.",Sarasota,FL,32267,IBERIABANK,2009-11-13,10148
+436,United Commercial Bank,San Francisco,CA,32469,East West Bank,2009-11-06,10147
+437,Gateway Bank of St. Louis,St. Louis,MO,19450,Central Bank of Kansas City,2009-11-06,10146
+438,Prosperan Bank,Oakdale,MN,35074,"Alerus Financial, N.A.",2009-11-06,10143
+439,Home Federal Savings Bank,Detroit,MI,30329,Liberty Bank and Trust Company,2009-11-06,10144
+440,United Security Bank,Sparta,GA,22286,Ameris Bank,2009-11-06,10145
+441,North Houston Bank,Houston,TX,18776,U.S. Bank N.A.,2009-10-30,10138
+442,Madisonville State Bank,Madisonville,TX,33782,U.S. Bank N.A.,2009-10-30,10142
+443,Citizens National Bank,Teague,TX,25222,U.S. Bank N.A.,2009-10-30,10141
+444,Park National Bank,Chicago,IL,11677,U.S. Bank N.A.,2009-10-30,10140
+445,Pacific National Bank,San Francisco,CA,30006,U.S. Bank N.A.,2009-10-30,10139
+446,California National Bank,Los Angeles,CA,34659,U.S. Bank N.A.,2009-10-30,10134
+447,San Diego National Bank,San Diego,CA,23594,U.S. Bank N.A.,2009-10-30,10135
+448,Community Bank of Lemont,Lemont,IL,35291,U.S. Bank N.A.,2009-10-30,10137
+449,"Bank USA, N.A.",Phoenix,AZ,32218,U.S. Bank N.A.,2009-10-30,10136
+450,First DuPage Bank,Westmont,IL,35038,First Midwest Bank,2009-10-23,10128
+451,Riverview Community Bank,Otsego,MN,57525,Central Bank,2009-10-23,10133
+452,Bank of Elmwood,Racine,WI,18321,Tri City National Bank,2009-10-23,10132
+453,Flagship National Bank,Bradenton,FL,35044,First Federal Bank of Florida,2009-10-23,10129
+454,Hillcrest Bank Florida,Naples,FL,58336,Stonegate Bank,2009-10-23,10131
+455,American United Bank,Lawrenceville,GA,57794,Ameris Bank,2009-10-23,10127
+456,Partners Bank,Naples,FL,57959,Stonegate Bank,2009-10-23,10130
+457,San Joaquin Bank,Bakersfield,CA,23266,Citizens Business Bank,2009-10-16,10126
+458,Southern Colorado National Bank,Pueblo,CO,57263,Legacy Bank,2009-10-02,10123
+459,Jennings State Bank,Spring Grove,MN,11416,Central Bank,2009-10-02,10124
+460,Warren Bank,Warren,MI,34824,The Huntington National Bank,2009-10-02,10125
+461,Georgian Bank,Atlanta,GA,57151,"First Citizens Bank and Trust Company, Inc.",2009-09-25,10122
+462,"Irwin Union Bank, F.S.B.",Louisville,KY,57068,"First Financial Bank, N.A.",2009-09-18,10121
+463,Irwin Union Bank and Trust Company,Columbus,IN,10100,"First Financial Bank, N.A.",2009-09-18,10120
+464,Venture Bank,Lacey,WA,22868,First-Citizens Bank & Trust Company,2009-09-11,10119
+465,Brickwell Community Bank,Woodbury,MN,57736,CorTrust Bank N.A.,2009-09-11,10118
+466,"Corus Bank, N.A.",Chicago,IL,13693,"MB Financial Bank, N.A.",2009-09-11,10117
+467,First State Bank,Flagstaff,AZ,34875,Sunwest Bank,2009-09-04,10114
+468,Platinum Community Bank,Rolling Meadows,IL,35030,No Acquirer,2009-09-04,10115
+469,Vantus Bank,Sioux City,IA,27732,Great Southern Bank,2009-09-04,10116
+470,InBank,Oak Forest,IL,20203,"MB Financial Bank, N.A.",2009-09-04,10113
+471,First Bank of Kansas City,Kansas City,MO,25231,Great American Bank,2009-09-04,10112
+472,Affinity Bank,Ventura,CA,27197,Pacific Western Bank,2009-08-28,10110
+473,Mainstreet Bank,Forest Lake,MN,1909,Central Bank,2009-08-28,10111
+474,Bradford Bank,Baltimore,MD,28312,Manufacturers and Traders Trust Company (M&T Bank),2009-08-28,10109
+475,Guaranty Bank,Austin,TX,32618,BBVA Compass,2009-08-21,10105
+476,CapitalSouth Bank,Birmingham,AL,22130,IBERIABANK,2009-08-21,10106
+477,First Coweta Bank,Newnan,GA,57702,United Bank,2009-08-21,10108
+478,ebank,Atlanta,GA,34682,"Stearns Bank, N.A.",2009-08-21,10107
+479,Community Bank of Nevada,Las Vegas,NV,34043,No Acquirer,2009-08-14,10100
+480,Community Bank of Arizona,Phoenix,AZ,57645,MidFirst Bank,2009-08-14,10101
+481,"Union Bank, National Association",Gilbert,AZ,34485,MidFirst Bank,2009-08-14,10102
+482,Colonial Bank,Montgomery,AL,9609,"Branch Banking & Trust Company, (BB&T)",2009-08-14,10103
+483,Dwelling House Savings and Loan Association,Pittsburgh,PA,31559,"PNC Bank, N.A.",2009-08-14,10104
+484,Community First Bank,Prineville,OR,23268,Home Federal Bank,2009-08-07,10092
+485,Community National Bank of Sarasota County,Venice,FL,27183,"Stearns Bank, N.A.",2009-08-07,10099
+486,First State Bank,Sarasota,FL,27364,"Stearns Bank, N.A.",2009-08-07,10098
+487,Mutual Bank,Harvey,IL,18659,United Central Bank,2009-07-31,10094
+488,First BankAmericano,Elizabeth,NJ,34270,Crown Bank,2009-07-31,10097
+489,Peoples Community Bank,West Chester,OH,32288,"First Financial Bank, N.A.",2009-07-31,10096
+490,Integrity Bank,Jupiter,FL,57604,Stonegate Bank,2009-07-31,10095
+491,First State Bank of Altus,Altus,OK,9873,Herring Bank,2009-07-31,10093
+492,Security Bank of Jones County,Gray,GA,8486,State Bank and Trust Company,2009-07-24,10088
+493,Security Bank of Houston County,Perry,GA,27048,State Bank and Trust Company,2009-07-24,10087
+494,Security Bank of Bibb County,Macon,GA,27367,State Bank and Trust Company,2009-07-24,10085
+495,Security Bank of North Metro,Woodstock,GA,57105,State Bank and Trust Company,2009-07-24,10090
+496,Security Bank of North Fulton,Alpharetta,GA,57430,State Bank and Trust Company,2009-07-24,10089
+497,Security Bank of Gwinnett County,Suwanee,GA,57346,State Bank and Trust Company,2009-07-24,10086
+498,Waterford Village Bank,Williamsville,NY,58065,"Evans Bank, N.A.",2009-07-24,10091
+499,Temecula Valley Bank,Temecula,CA,34341,First-Citizens Bank & Trust Company,2009-07-17,10082
+500,Vineyard Bank,Rancho Cucamonga,CA,23556,California Bank & Trust,2009-07-17,10083
+501,BankFirst,Sioux Falls,SD,34103,"Alerus Financial, N.A.",2009-07-17,10081
+502,First Piedmont Bank,Winder,GA,34594,First American Bank and Trust Company,2009-07-17,10084
+503,Bank of Wyoming,Thermopolis,WY,22754,Central Bank & Trust,2009-07-10,10080
+504,Founders Bank,Worth,IL,18390,The PrivateBank and Trust Company,2009-07-02,10074
+505,Millennium State Bank of Texas,Dallas,TX,57667,State Bank of Texas,2009-07-02,10079
+506,First National Bank of Danville,Danville,IL,3644,"First Financial Bank, N.A.",2009-07-02,10078
+507,The Elizabeth State Bank,Elizabeth,IL,9262,Galena State Bank and Trust Company,2009-07-02,10073
+508,Rock River Bank,Oregon,IL,15302,The Harvard State Bank,2009-07-02,10075
+509,First State Bank of Winchester,Winchester,IL,11710,The First National Bank of Beardstown,2009-07-02,10077
+510,John Warner Bank,Clinton,IL,12093,State Bank of Lincoln,2009-07-02,10076
+511,Mirae Bank,Los Angeles,CA,57332,Wilshire State Bank,2009-06-26,10072
+512,MetroPacific Bank,Irvine,CA,57893,Sunwest Bank,2009-06-26,10071
+513,Horizon Bank,Pine City,MN,9744,"Stearns Bank, N.A.",2009-06-26,10070
+514,Neighborhood Community Bank,Newnan,GA,35285,CharterBank,2009-06-26,10069
+515,Community Bank of West Georgia,Villa Rica,GA,57436,No Acquirer,2009-06-26,10068
+516,First National Bank of Anthony,Anthony,KS,4614,Bank of Kansas,2009-06-19,10066
+517,Cooperative Bank,Wilmington,NC,27837,First Bank,2009-06-19,10065
+518,Southern Community Bank,Fayetteville,GA,35251,United Community Bank,2009-06-19,10067
+519,Bank of Lincolnwood,Lincolnwood,IL,17309,Republic Bank of Chicago,2009-06-05,10064
+520,Citizens National Bank,Macomb,IL,5757,Morton Community Bank,2009-05-22,10063
+521,Strategic Capital Bank,Champaign,IL,35175,Midland States Bank,2009-05-22,10062
+522,"BankUnited, FSB",Coral Gables,FL,32247,BankUnited,2009-05-21,10061
+523,Westsound Bank,Bremerton,WA,34843,Kitsap Bank,2009-05-08,10060
+524,America West Bank,Layton,UT,35461,Cache Valley Bank,2009-05-01,10057
+525,Citizens Community Bank,Ridgewood,NJ,57563,North Jersey Community Bank,2009-05-01,10058
+526,"Silverton Bank, NA",Atlanta,GA,26535,No Acquirer,2009-05-01,10059
+527,First Bank of Idaho,Ketchum,ID,34396,"U.S. Bank, N.A.",2009-04-24,10055
+528,First Bank of Beverly Hills,Calabasas,CA,32069,No Acquirer,2009-04-24,10054
+529,Michigan Heritage Bank,Farmington Hills,MI,34369,Level One Bank,2009-04-24,10056
+530,American Southern Bank,Kennesaw,GA,57943,Bank of North Georgia,2009-04-24,10053
+531,Great Basin Bank of Nevada,Elko,NV,33824,Nevada State Bank,2009-04-17,10051
+532,American Sterling Bank,Sugar Creek,MO,8266,Metcalf Bank,2009-04-17,10052
+533,New Frontier Bank,Greeley,CO,34881,No Acquirer,2009-04-10,10050
+534,Cape Fear Bank,Wilmington,NC,34639,First Federal Savings and Loan Association,2009-04-10,10049
+535,Omni National Bank,Atlanta,GA,22238,No Acquirer,2009-03-27,10048
+536,"TeamBank, NA",Paola,KS,4754,Great Southern Bank,2009-03-20,10046
+537,Colorado National Bank,Colorado Springs,CO,18896,Herring Bank,2009-03-20,10045
+538,FirstCity Bank,Stockbridge,GA,18243,No Acquirer,2009-03-20,10047
+539,Freedom Bank of Georgia,Commerce,GA,57558,Northeast Georgia Bank,2009-03-06,10044
+540,Security Savings Bank,Henderson,NV,34820,Bank of Nevada,2009-02-27,10043
+541,Heritage Community Bank,Glenwood,IL,20078,"MB Financial Bank, N.A.",2009-02-27,10042
+542,Silver Falls Bank,Silverton,OR,35399,Citizens Bank,2009-02-20,10041
+543,Pinnacle Bank of Oregon,Beaverton,OR,57342,Washington Trust Bank of Spokane,2009-02-13,10040
+544,Corn Belt Bank & Trust Co.,Pittsfield,IL,16500,The Carlinville National Bank,2009-02-13,10037
+545,Riverside Bank of the Gulf Coast,Cape Coral,FL,34563,TIB Bank,2009-02-13,10038
+546,Sherman County Bank,Loup City,NE,5431,Heritage Bank,2009-02-13,10039
+547,County Bank,Merced,CA,22574,Westamerica Bank,2009-02-06,10034
+548,Alliance Bank,Culver City,CA,23124,California Bank & Trust,2009-02-06,10035
+549,FirstBank Financial Services,McDonough,GA,57017,Regions Bank,2009-02-06,10036
+550,Ocala National Bank,Ocala,FL,26538,"CenterState Bank of Florida, N.A.",2009-01-30,10032
+551,Suburban FSB,Crofton,MD,30763,Bank of Essex,2009-01-30,10033
+552,MagnetBank,Salt Lake City,UT,58001,No Acquirer,2009-01-30,10031
+553,1st Centennial Bank,Redlands,CA,33025,First California Bank,2009-01-23,10030
+554,Bank of Clark County,Vancouver,WA,34959,Umpqua Bank,2009-01-16,10029
+555,National Bank of Commerce,Berkeley,IL,19733,Republic Bank of Chicago,2009-01-16,10028
+556,Sanderson State Bank,Sanderson,TX,11568,The Pecos County State Bank,2008-12-12,10026
+557,Haven Trust Bank,Duluth,GA,35379,"Branch Banking & Trust Company, (BB&T)",2008-12-12,10027
+558,First Georgia Community Bank,Jackson,GA,34301,United Bank,2008-12-05,10025
+559,PFF Bank & Trust,Pomona,CA,28344,"U.S. Bank, N.A.",2008-11-21,10024
+560,Downey Savings & Loan,Newport Beach,CA,30968,"U.S. Bank, N.A.",2008-11-21,10023
+561,Community Bank,Loganville,GA,16490,Bank of Essex,2008-11-21,10022
+562,Security Pacific Bank,Los Angeles,CA,23595,Pacific Western Bank,2008-11-07,10020
+563,"Franklin Bank, SSB",Houston,TX,26870,Prosperity Bank,2008-11-07,10021
+564,Freedom Bank,Bradenton,FL,57930,Fifth Third Bank,2008-10-31,10019
+565,Alpha Bank & Trust,Alpharetta,GA,58241,"Stearns Bank, N.A.",2008-10-24,10018
+566,Meridian Bank,Eldred,IL,13789,National Bank,2008-10-10,10017
+567,Main Street Bank,Northville,MI,57654,Monroe Bank & Trust,2008-10-10,10016
+568,Washington Mutual Bank (Including its subsidiary Washington Mutual Bank FSB),Henderson,NV,32633,JP Morgan Chase Bank,2008-09-25,10015
+569,Ameribank,Northfork,WV,6782,"The Citizens Savings Bank ********** Pioneer Community Bank, Inc.",2008-09-19,10014
+570,Silver State Bank,Henderson,NV,34194,Nevada State Bank,2008-09-05,10013
+571,Integrity Bank,Alpharetta,GA,35469,Regions Bank,2008-08-29,10012
+572,Columbian Bank & Trust,Topeka,KS,22728,Citizens Bank & Trust,2008-08-22,10011
+573,First Priority Bank,Bradenton,FL,57523,SunTrust Bank,2008-08-01,10010
+574,"First Heritage Bank, NA",Newport Beach,CA,57961,Mutual of Omaha Bank,2008-07-25,10009
+575,First National Bank of Nevada,Reno,NV,27011,Mutual of Omaha Bank,2008-07-25,10008
+576,IndyMac Bank,Pasadena,CA,29730,"OneWest Bank, FSB",2008-07-11,10007
+577,"First Integrity Bank, NA",Staples,MN,12736,First International Bank and Trust,2008-05-30,10006
+578,"ANB Financial, NA",Bentonville,AR,33901,Pulaski Bank and Trust Company,2008-05-09,10005
+579,Hume Bank,Hume,MO,1971,Security Bank,2008-03-07,10004
+580,Douglass National Bank,Kansas City,MO,24660,Liberty Bank and Trust Company,2008-01-25,10003
+581,Miami Valley Bank,Lakeview,OH,16848,The Citizens Banking Company,2007-10-04,10002
+582,NetBank,Alpharetta,GA,32575,ING DIRECT,2007-09-28,10001
+583,Metropolitan Savings Bank,Pittsburgh,PA,35353,Allegheny Valley Bank of Pittsburgh,2007-02-02,10000
+584,Bank of Ephraim,Ephraim,UT,1249,Far West Bank,2004-06-25,4665
+585,Reliance Bank,White Plains,NY,26778,Union State Bank,2004-03-19,4664
+586,Guaranty National Bank of Tallahassee,Tallahassee,FL,26838,Hancock Bank of Florida,2004-03-12,4663
+587,Dollar Savings Bank,Newark,NJ,31330,No Acquirer,2004-02-14,6006
+588,Pulaski Savings Bank,Philadelphia,PA,27203,Earthstar Bank,2003-11-14,4662
+589,First National Bank of Blanchardville,Blanchardville,WI,11639,The Park Bank,2003-05-09,4661
+590,Southern Pacific Bank,Torrance,CA,27094,Beal Bank,2003-02-07,4660
+591,Farmers Bank of Cheneyville,Cheneyville,LA,16445,Sabine State Bank & Trust,2002-12-17,4659
+592,Bank of Alamo,Alamo,TN,9961,No Acquirer,2002-11-08,4658
+593,AmTrade International Bank,Atlanta,GA,33784,No Acquirer,2002-09-30,4657
+594,Universal Federal Savings Bank,Chicago,IL,29355,Chicago Community Bank,2002-06-27,6005
+595,Connecticut Bank of Commerce,Stamford,CT,19183,Hudson United Bank,2002-06-26,4656
+596,New Century Bank,Shelby Township,MI,34979,No Acquirer,2002-03-28,4655
+597,Net 1st National Bank,Boca Raton,FL,26652,Bank Leumi USA,2002-03-01,4654
+598,"NextBank, NA",Phoenix,AZ,22314,No Acquirer,2002-02-07,4653
+599,Oakwood Deposit Bank Co.,Oakwood,OH,8966,The State Bank & Trust Company,2002-02-01,4652
+600,Bank of Sierra Blanca,Sierra Blanca,TX,22002,The Security State Bank of Pecos,2002-01-18,4651
+601,"Hamilton Bank, NA",Miami,FL,24382,Israel Discount Bank of New York,2002-01-11,4650
+602,Sinclair National Bank,Gravette,AR,34248,Delta Trust & Bank,2001-09-07,4649
+603,"Superior Bank, FSB",Hinsdale,IL,32646,"Superior Federal, FSB",2001-07-27,6004
+604,Malta National Bank,Malta,OH,6629,North Valley Bank,2001-05-03,4648
+605,First Alliance Bank & Trust Co.,Manchester,NH,34264,Southern New Hampshire Bank & Trust,2001-02-02,4647
+606,National State Bank of Metropolis,Metropolis,IL,3815,Banterra Bank of Marion,2000-12-14,4646
+607,Bank of Honolulu,Honolulu,HI,21029,Bank of the Orient,2000-10-13,4645
