@@ -140,8 +140,12 @@ and EXTRACT('MONTH' from timescale) = EXTRACT('MONTH' from closing_date)
 GROUP BY closing_year, closing_month
 ORDER BY closing_year, closing_month);
 ```
+Here are some of the queries I ran on the dataset, and materialized view:
 
-Before we get into time series, here are a few queries I ran on the original data set:
+How many bank closed over the entire time period:
+```sql
+select count(*) from bank_failures bf ;
+```
 
 Which states had the most bank failures over the complete time period?
 
@@ -167,7 +171,7 @@ limit 10;
 |TX|13|
 
 
-Which states had the most closures in a given year, and for which year?
+Which states had the most closures over the time period?
 
 ```sql
 select state, extract('YEAR' from closing_date) :: TEXT as closing_year, COUNT(*) as state_failures_by_year
@@ -230,8 +234,6 @@ order by all_years.timescale;
 |2003|WI|1|
 
 
-Questions:
-
 Which years had the most bank failures?
 ```sql
 select 
@@ -274,8 +276,49 @@ limit 5;
 |4|2009|10|20|
 |5|2010|3|19|
 
+
+What was percent change each year?
+
+```sql
+with bank_failures_by_year as (
+SELECT
+  EXTRACT('YEAR' FROM timescale) as closing_year, 
+  COUNT(bank_failures.closing_date) as total_failures,
+  coalesce(LAG(COUNT(bank_failures.closing_date)) over (order by EXTRACT('YEAR' FROM timescale)),0) as prev_year_failures
+FROM (SELECT
+generate_series('2000-01-01', '2023-12-01','1 year'::interval) as timescale) as series LEFT JOIN bank_failures 
+on EXTRACT('YEAR' from timescale) = EXTRACT('YEAR' from closing_date)
+GROUP BY closing_year
+ORDER BY closing_year)
+select closing_year, total_failures, 
+	case 
+		when closing_year = 2000 then 0 || '%'
+		when prev_year_failures = 0 then total_failures * 100 || '%' 
+		else ROUND(((total_failures - prev_year_failures) :: NUMERIC / prev_year_failures) * 100.0, 2) || '%' 
+	end as yoy_pct_change
+from bank_failures_by_year;
+```
+
+|closing_year|total_failures|yoy_pct_change|
+|------------|--------------|--------------|
+|2006|0|0%|
+|2007|3|300%|
+|2008|25|733.33%|
+|2009|140|460.00%|
+|2010|157|12.14%|
+|2011|92|-41.40%|
+|2012|51|-44.57%|
+|2013|24|-52.94%|
+|2014|18|-25.00%|
+|2015|8|-55.56%|
+|2016|5|-37.50%
 ## Readout
 [TODO] Explain what you found from the queries
+
+Over the time period from 2000 to 2023, there were 568 banks that closed. Georiga, Florida, and Illinois had the most closers over the time period with 93, 76, and 69 closures respectively. On a year basis, Florida had the most closures in a single year with 29 banks closing in 2010.
+
+As expected, bank closures treneded upwards between 2008 - 2012, peaking with 157 closures in 2010. From 
+
 
 ## Wrapping it up
 
@@ -286,7 +329,7 @@ levels of granularity (day, week, month, etc.) to match the granularity of your 
 ## Improvemnts 
 
 1. I made use of the EXTRACT function often in my queries. It may have made sense to organize the table such that year has it's own column, so I don't
-need to call EXTRACT('YEAR' from closing_date) multiple times across queries.
+need to call EXTRACT('YEAR' from closing_date) multiple times across queries. Or possibly use DATE_TRUNC instead of extract so I can compare values as dates rather than numbers.
 
 2. Each row has an acquiring institution. It would be interesting to revisit
 the dataset and use some recursive queries to uncover chains of acquisitions.
@@ -294,6 +337,10 @@ the dataset and use some recursive queries to uncover chains of acquisitions.
 3. Normalizing the some columns such as state, acquiring institution, institution could make it easier to run queries related to who acquired which banks. FDIC has additional datasets that assign a unique id to institutions. An enhancement to this project would be to import all FDIC institutions and use that as a reference to normalize data for institutions in the bank failures dataset.
 
 ## Helpful Links
-1. [generate_series() postgres docs](https://www.postgresql.org/docs/current/functions-srf.html)
+
+1. [FDIC Bank Failures Homepage](https://www.fdic.gov/resources/resolutions/bank-failures/)
+
+2. [generate_series() postgres docs](https://www.postgresql.org/docs/current/functions-srf.html)
 
 2. [timescale db - generate series explanation](https://www.timescale.com/blog/how-to-create-lots-of-sample-time-series-data-with-postgresql-generate_series/)
+
