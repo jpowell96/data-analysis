@@ -199,15 +199,36 @@ with ranked_state_failures_by_year as (
 	 state,
 	 COUNT(*) as state_failures_by_year,
 	 -- Window functions are evaluated AFTER the group by clause, so this is comparing the bank failures per state
-	 dense_rank() over (partition by extract('YEAR' from closing_date) order by  COUNT(*) desc)
+	 dense_rank() over (partition by extract('YEAR' from closing_date) order by  COUNT(*) desc) 
 	from bank_failures bf 
 	group by extract('YEAR' from closing_date), state
-	order by extract('YEAR' from closing_date), COUNT(*) desc)
-select closing_year, state, state_failures_by_year 
-from ranked_state_failures_by_year
-where dense_rank = 1
-order by closing_year;
+	order by extract('YEAR' from closing_date), COUNT(*) desc),
+all_years as (
+	select generate_series('01-01-2000', '01-01-2023', '1 year'::interval) as timescale
+)
+select extract('YEAR' from all_years.timescale) as closing_year, 
+coalesce(state, 'N/A') as state, 
+coalesce(state_failures_by_year, 0) as state_failures_by_year
+from 
+all_years left JOIN
+ranked_state_failures_by_year
+on  extract('YEAR' from all_years.timescale) = ranked_state_failures_by_year.closing_year 
+-- Some years do not have bank failures, so we include a null check to ensure they appear in the result set
+where dense_rank = 1 or dense_rank is null
+order by all_years.timescale;
 ```
+
+|closing_year|state|state_failures_by_year|
+|------------|-----|----------------------|
+|2000|HI|1|
+|2000|IL|1|
+|2001|AR|1|
+|2001|OH|1|
+|2001|IL|1|
+|2001|NH|1|
+|2002|FL|2|
+|2003|WI|1|
+
 
 Questions:
 
