@@ -274,6 +274,9 @@ limit 5;
 |4|2009|10|20|
 |5|2010|3|19|
 
+## Readout
+[TODO] Explain what you found from the queries
+
 ## Wrapping it up
 
 For time series data that has gaps, the generate_series() function can enable 
