@@ -45,6 +45,7 @@ I imported my data for real but got this error message:
 After some digging online, I realized this meant there was a non UTF-8 character in the csv file. There was a hyphen character '-' for one of the banks was a special character. I replaced it with a "regular" hyphen - character and that allowed me to import all the data.
 
 Once imported, the data looked like this:
+
 |id|bank_name|city|state|cert|acquiring_institution|closing_date|fund|
 |--|---------|----|-----|----|---------------------|------------|----|
 |40|Citizens Bank|Sac City|IA|8758|Iowa Trust & Savings Bank|2023-11-03|10545|
