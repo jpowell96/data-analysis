@@ -3,7 +3,7 @@
 My latest endeavor with SQL is working with timeseries data.
 For this mini-analysis, I decided to chart out US bank failures overtime.
 
-I found the [csv file of the data](https://catalog.data.gov/dataset/fdic-failed-bank-list) on data.gov, which has public
+I found an [official dataset of FDIC Bank Failures](https://catalog.data.gov/dataset/fdic-failed-bank-list) on data.gov, which has public
 datasets from the US governemnt. It lists all the banks that have failed since 2000.
 
 ## Importing the Data
@@ -43,6 +43,16 @@ I imported my data for real but got this error message:
 `ERROR:  invalid byte sequence for encoding "UTF8": 0x96`
 
 After some digging online, I realized this meant there was a non UTF-8 character in the csv file. There was a hyphen character '-' for one of the banks was a special character. I replaced it with a "regular" hyphen - character and that allowed me to import all the data.
+
+Once imported, the data looked like this:
+|id|bank_name|city|state|cert|acquiring_institution|closing_date|fund|
+|--|---------|----|-----|----|---------------------|------------|----|
+|40|Citizens Bank|Sac City|IA|8758|Iowa Trust & Savings Bank|2023-11-03|10545|
+|41|Heartland Tri-State Bank|Elkhart|KS|25851|Dream First Bank, N.A.|2023-07-28|10544|
+|42|First Republic Bank|San Francisco|CA|59017|JPMorgan Chase Bank, N.A.|2023-05-01|10543|
+|43|Signature Bank|New York|NY|57053|Flagstar Bank, N.A.|2023-03-12|10540|
+|44|Silicon Valley Bank|Santa Clara|CA|24735|First-Citizens Bank & Trust Company|2023-03-10|10539|
+
 
 ## Querying the data
 
@@ -340,7 +350,7 @@ levels of granularity (day, week, month, etc.) to match the granularity of your 
 
 ## Improvements
 
-1. I made use of the EXTRACT function often in my queries. It might make sense to just have columns for month, year since I was using extract so often.
+1. I made use of the EXTRACT function often in my queries. It might make sense to just have columns for month, year since I was using extract so often. 
 
 2. Each row has an acquiring institution. It would be interesting to revisit
 the dataset and use some recursive queries to uncover chains of acquisitions.
