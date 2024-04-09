@@ -54,8 +54,8 @@ I started with a query to find all the months/years that banks had failures
 ```sql
 -- Return bank failures by month, year based on the dataset
  SELECT
-  EXTRACT('YEAR' FROM closing_date) as closing_year, 
-  EXTRACT('MONTH' FROM closing_date) as closing_month, 
+  EXTRACT('YEAR' FROM closing_date :: DATE) as closing_year, 
+  EXTRACT('MONTH' FROM closing_date :: DATE) as closing_month, 
   COUNT(*) as total_failures  
 FROM bank_failures 
 GROUP BY closing_year, closing_month
@@ -90,9 +90,10 @@ SELECT
   EXTRACT('YEAR' FROM timescale) as closing_year, 
   EXTRACT('MONTH' FROM timescale) as closing_month, 
   COUNT(bank_failures.closing_date) as total_failures  
+-- the series table has complete dates, so join bank_failures onto the series for complete data for the complete time period
 FROM series LEFT JOIN bank_failures 
-on EXTRACT('YEAR' from timescale) = EXTRACT('YEAR' from closing_date)
-and EXTRACT('MONTH' from timescale) = EXTRACT('MONTH' from closing_date)
+on EXTRACT('YEAR' from timescale) = EXTRACT('YEAR' from closing_date :: DATE)
+and EXTRACT('MONTH' from timescale) = EXTRACT('MONTH' from closing_date :: DATE)
 GROUP BY closing_year, closing_month
 ORDER BY closing_year, closing_month;
 ```
@@ -113,7 +114,7 @@ SELECT
   EXTRACT('YEAR' FROM timescale) as closing_year, 
   COUNT(bank_failures.closing_date) as total_failures  
 FROM series LEFT JOIN bank_failures 
-on EXTRACT('YEAR' from timescale) = EXTRACT('YEAR' from closing_date)
+on EXTRACT('YEAR' from timescale) = EXTRACT('YEAR' from closing_date :: DATE)
 GROUP BY closing_year
 ORDER BY closing_year;
 ```
@@ -135,8 +136,8 @@ SELECT
   EXTRACT('MONTH' FROM timescale) as closing_month, 
   COUNT(bank_failures.closing_date) as total_failures  
 FROM series LEFT JOIN bank_failures 
-on EXTRACT('YEAR' from timescale) = EXTRACT('YEAR' from closing_date)
-and EXTRACT('MONTH' from timescale) = EXTRACT('MONTH' from closing_date)
+on EXTRACT('YEAR' from timescale) = EXTRACT('YEAR' from closing_date :: DATE)
+and EXTRACT('MONTH' from timescale) = EXTRACT('MONTH' from closing_date :: DATE)
 GROUP BY closing_year, closing_month
 ORDER BY closing_year, closing_month);
 ```
@@ -281,15 +282,18 @@ What was percent change each year?
 
 ```sql
 with bank_failures_by_year as (
+-- Return a table with the year, total_failures, and toal failures in the previous year, defaulting to 0 if not data is found
 SELECT
   EXTRACT('YEAR' FROM timescale) as closing_year, 
   COUNT(bank_failures.closing_date) as total_failures,
   coalesce(LAG(COUNT(bank_failures.closing_date)) over (order by EXTRACT('YEAR' FROM timescale)),0) as prev_year_failures
 FROM (SELECT
 generate_series('2000-01-01', '2023-12-01','1 year'::interval) as timescale) as series LEFT JOIN bank_failures 
+-- Join the series of years with the bank failures table based on matching years
 on EXTRACT('YEAR' from timescale) = EXTRACT('YEAR' from closing_date)
 GROUP BY closing_year
 ORDER BY closing_year)
+-- Calculate the year over year change between each year of bank failures
 select closing_year, total_failures, 
 	case 
 		when closing_year = 2000 then 0 || '%'
@@ -314,11 +318,11 @@ from bank_failures_by_year;
 |2016|5|-37.50%
 
 ## Readout
-[TODO] Explain what you found from the queries
 
 Over the time period from 2000 to 2023, there were 568 banks that closed. Georiga, Florida, and Illinois had the most closers over the time period with 93, 76, and 69 closures respectively. On a year basis, Florida had the most closures in a single year with 29 banks closing in 2010.
 
 As expected, bank closures treneded upwards between 2008 - 2012, peaking with 157 closures in 2010. The year over year changes highlight this explosion of failures.
+
 From 2007 to 2008, the number of bank closures grew over 8x from 3 closures to 25 closures, and grew even more the following year - from 25 closures in 2008 to 140 in 2009 - a 460% increase. Closures in a single year peaked in 2010 with 157 closures with Florida having the most closures with 29 bank clousres. July 2009 was the worst month for closures, with 29 closings in a single month.
 
 
@@ -328,10 +332,9 @@ For time series data that has gaps, the generate_series() function can enable
 analyzing the data with a complete timeline. And, if needed, can support different
 levels of granularity (day, week, month, etc.) to match the granularity of your date.
 
-## Improvemnts 
+## Improvements
 
-1. I made use of the EXTRACT function often in my queries. It may have made sense to organize the table such that year has it's own column, so I don't
-need to call EXTRACT('YEAR' from closing_date) multiple times across queries. Or possibly use DATE_TRUNC instead of extract so I can compare values as dates rather than numbers.
+1. I made use of the EXTRACT function often in my queries. It might make sense to just have columns for month, year since I was using extract so often.
 
 2. Each row has an acquiring institution. It would be interesting to revisit
 the dataset and use some recursive queries to uncover chains of acquisitions.
