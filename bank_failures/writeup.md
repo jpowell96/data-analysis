@@ -64,7 +64,7 @@ ORDER BY closing_year, closing_month;
 
 To my surprise, there were some months missing from this query. There wasn't a row for months from January - October, 2000. 
 
-This should be though, if there weren't any failures for a given month in a year, there wouldn't be rows. If I want there to be rows for every month from 2000 - 2023, I need to have date for those months too.
+It may seem odd, but this is the expected output. If there weren't any failures for a given month in a year, there wouldn't be rows. If I want there to be rows for every month from 2000 - 2023, I need to have date for those months too.
 
 To accomplish this I made a table called timescale, that contains all the months, years from January, 2000 - December 2023. My initial attempt was overcomplicated, but I realized PostgreSQL provides a helpful function, [generate_series()](https://www.postgresql.org/docs/current/functions-srf.html) That lets me generate a series of rows between to dates:
 
@@ -151,7 +151,9 @@ select count(*) from bank_failures bf ;
 Which states had the most bank failures over the complete time period?
 
 ```sql
-select state, COUNT(*) as bank_failures
+select 
+    state, 
+    COUNT(*) as bank_failures
 from bank_failures bf 
 group by state
 order by COUNT(*) desc
@@ -175,7 +177,10 @@ limit 10;
 Which states had the most closures over the time period?
 
 ```sql
-select state, extract('YEAR' from closing_date) :: TEXT as closing_year, COUNT(*) as state_failures_by_year
+select 
+    state, 
+    extract('YEAR' from closing_date) :: TEXT as closing_year, 
+    COUNT(*) as state_failures_by_year
 from bank_failures bf 
 group by state, extract('YEAR' from closing_date) 
 order by COUNT(*) desc
@@ -211,9 +216,10 @@ with ranked_state_failures_by_year as (
 all_years as (
 	select generate_series('01-01-2000', '01-01-2023', '1 year'::interval) as timescale
 )
-select extract('YEAR' from all_years.timescale) as closing_year, 
-coalesce(state, 'N/A') as state, 
-coalesce(state_failures_by_year, 0) as state_failures_by_year
+select 
+    extract('YEAR' from all_years.timescale) as closing_year, 
+    coalesce(state, 'N/A') as state, 
+    coalesce(state_failures_by_year, 0) as state_failures_by_year
 from 
 all_years left JOIN
 ranked_state_failures_by_year
