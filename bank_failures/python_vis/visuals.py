@@ -2,6 +2,7 @@ import psycopg
 import seaborn as sns
 import matplotlib.pyplot as plt
 
+print("This is my code change.")
 allRecords = []
 with psycopg.connect("dbname=bank_failures_test user=jjpowell") as conn:
 	with conn.cursor() as cur:
