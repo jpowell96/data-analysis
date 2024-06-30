@@ -6,15 +6,15 @@ allRecords = []
 with psycopg.connect("dbname=bank_failures_test user=jjpowell") as conn:
 	with conn.cursor() as cur:
 		cur.execute("""
-with years AS(
-SELECT DATE_TRUNC('year', timescale) as year FROM 
-generate_series('2000-01-01', '2023-12-01','1 year'::interval) as
-timescale)
-select extract( 'year' from years.year), COUNT(bf.closing_date) as bank_failures
-from years left join bank_failures bf 
-on years.year = DATE_TRUNC('year', bf.closing_date)
-group by year
-order by year asc;
+with series as (SELECT
+generate_series('2000-01-01', '2023-12-01','1 year'::interval) as timescale)
+SELECT
+  EXTRACT('YEAR' FROM timescale) as closing_year, 
+  COUNT(bank_failures.closing_date) as total_failures  
+FROM series LEFT JOIN bank_failures 
+on EXTRACT('YEAR' from timescale) = EXTRACT('YEAR' from closing_date)
+GROUP BY closing_year
+ORDER BY closing_year;
 """)
 		allRecords = cur.fetchall()
 		conn.commit()
